@@ -1,0 +1,123 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/posted_jobs.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-4">
+
+<h3>
+    <i class="bi bi-briefcase"></i>
+    Posted Jobs
+</h3>
+
+
+<table class="table table-bordered shadow mt-4">
+
+<thead class="table-dark">
+
+<tr>
+    <th>#</th>
+    <th>Job Title</th>
+    <th>Company</th>
+    <th>Type</th>
+    <th>Status</th>
+    <th>Deadline</th>
+    <th>Actions</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+{% for job in jobs %}
+
+<tr>
+
+<td>{{ forloop.counter }}</td>
+
+<td>
+    {{ job.job_title }}
+</td>
+
+
+<td>
+    {{ job.company.company_name }}
+</td>
+
+
+<td>
+    {{ job.job_type }}
+</td>
+
+
+<td>
+
+{% if job.status == "Open" %}
+
+<span class="badge bg-success">
+    {{ job.status }}
+</span>
+
+{% else %}
+
+<span class="badge bg-danger">
+    {{ job.status }}
+</span>
+
+{% endif %}
+
+</td>
+
+
+<td>
+    {{ job.deadline }}
+</td>
+
+
+<td>
+
+<a href="{% url 'admin_job_detail' job.id %}"
+class="btn btn-primary btn-sm">
+
+<i class="bi bi-eye"></i>
+View
+
+</a>
+
+
+<a href="{% url 'delete_job' job.id %}"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Are you sure?')">
+
+<i class="bi bi-trash"></i>
+Delete
+
+</a>
+
+
+</td>
+
+</tr>
+
+
+{% empty %}
+
+<tr>
+<td colspan="7" class="text-center">
+No jobs posted
+</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

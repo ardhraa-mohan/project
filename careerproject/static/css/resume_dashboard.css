@@ -1,0 +1,326 @@
+body{
+    background-color:#f4f4f4;
+    font-family:Arial, sans-serif;
+}
+
+
+/* Page Heading */
+
+.container h2{
+    color:#667eea;
+    font-weight:bold;
+}
+
+
+.container p{
+    font-size:15px;
+}
+
+
+/* Resume Cards */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    transition:0.3s ease;
+
+    height:100%;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 10px 25px rgba(102,126,234,0.35);
+
+}
+
+
+/* Card Body */
+
+.card-body{
+
+    padding:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/* Icons */
+
+.card i{
+
+    font-size:60px;
+
+    transition:0.3s ease;
+
+}
+
+
+.card:hover i{
+
+    transform:scale(1.1);
+
+}
+
+
+/* Card Titles */
+
+.card h4{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Buttons */
+
+.btn-primary,
+.btn-info{
+
+    padding:10px 30px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-primary{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+}
+
+
+.btn-primary:hover{
+
+    background-color:#5566d8;
+
+}
+
+
+.btn-info{
+
+    background-color:#17a2b8;
+
+    border:none;
+
+}
+
+
+.btn-info:hover{
+
+    background-color:#138496;
+
+}
+
+
+
+/* Text */
+
+.text-muted{
+
+    color:#777 !important;
+
+}
+
+
+
+/* ==========================
+      Tablet Responsive
+========================== */
+
+@media(max-width:992px){
+
+
+    .container{
+
+        padding:20px;
+
+    }
+
+
+    .card-body{
+
+        padding:30px;
+
+    }
+
+
+    .card i{
+
+        font-size:50px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+      Mobile Responsive
+========================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    .container h2{
+
+        font-size:26px;
+
+        text-align:center;
+
+    }
+
+
+    .container p{
+
+        font-size:14px;
+
+        text-align:center;
+
+    }
+
+
+    .row{
+
+        margin:0;
+
+    }
+
+
+    .card{
+
+        margin-bottom:20px;
+
+        border-radius:12px;
+
+    }
+
+
+    .card-body{
+
+        padding:25px 20px;
+
+    }
+
+
+    .card i{
+
+        font-size:45px;
+
+    }
+
+
+    .card h4{
+
+        font-size:20px;
+
+        text-align:center;
+
+    }
+
+
+    .card p{
+
+        font-size:14px;
+
+    }
+
+
+    .btn-primary,
+    .btn-info{
+
+        width:100%;
+
+        padding:12px;
+
+    }
+
+}
+
+
+
+/* ==========================
+      Small Mobile
+========================== */
+
+@media(max-width:480px){
+
+
+    .container{
+
+        padding:10px;
+
+    }
+
+
+    .container h2{
+
+        font-size:22px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px 15px;
+
+    }
+
+
+    .card i{
+
+        font-size:40px;
+
+    }
+
+
+    .card h4{
+
+        font-size:18px;
+
+    }
+
+
+    .card p{
+
+        font-size:13px;
+
+    }
+
+
+}

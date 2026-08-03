@@ -1,0 +1,81 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/job_details.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="job-details-card">
+
+        <!-- Job Title -->
+        <h2 class="job-title">{{ job.title }}</h2>
+
+        <p class="company">
+            <i class="fa-solid fa-building"></i>
+            {{ job.company.company_name }}
+        </p>
+
+        <hr>
+
+        <!-- Job Info -->
+        <div class="row mb-4">
+
+            <div class="col-md-3">
+                <strong>Location</strong><br>
+                {{ job.location }}
+            </div>
+
+            <div class="col-md-3">
+                <strong>Job Type</strong><br>
+                {{ job.job_type }}
+            </div>
+
+            <div class="col-md-3">
+                <strong>Salary</strong><br>
+                ₹ {{ job.salary }}
+            </div>
+
+            <div class="col-md-3">
+                <strong>Posted</strong><br>
+                {{ job.created_at|timesince }} ago
+            </div>
+
+        </div>
+
+        <!-- Description -->
+
+        <h5>Job Description</h5>
+
+        <p>
+            {{ job.description }}
+        </p>
+
+        <!-- Skills -->
+
+        <h5 class="mt-4">Required Skills</h5>
+
+        <span class="skill">{{ job.skills_required }}</span>
+
+        <!-- Buttons -->
+
+        <div class="mt-5 d-flex justify-content-between">
+
+            <a href="{% url 'job_portal' %}" class="btn btn-outline-secondary">
+                Back
+            </a>
+
+            <a href="{% url 'apply_job' job.id %}" class="btn btn-apply">
+                Apply Now
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

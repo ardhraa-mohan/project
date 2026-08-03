@@ -1,0 +1,304 @@
+{% extends "common/base_private.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/career_dashboard.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mt-4">
+
+
+    <!-- Header -->
+
+    <div class="card shadow-sm border-0 rounded-4 mb-4">
+
+        <div class="card-body">
+
+            <h3 class="fw-bold">
+                🤖 Career Assessment
+            </h3>
+
+            <p class="text-muted mb-0">
+                Personalized AI Career Guidance
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Completed Card -->
+
+    <div class="card shadow-sm border-0 rounded-4 mb-4">
+
+        <div class="card-body text-center">
+
+
+            <h4 class="text-success fw-bold">
+
+                ✅ Assessment Completed
+
+            </h4>
+
+
+            <p>
+                Your career assessment has been completed successfully.
+            </p>
+
+
+            {% if completed_date %}
+
+            <p class="text-muted">
+
+                Assessment Date:
+                {{ completed_date|date:"d F Y" }}
+
+            </p>
+
+            {% endif %}
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Report -->
+
+    <div class="card shadow-sm border-0 rounded-4 mb-4">
+
+
+        <div class="card-body">
+
+
+            <h5 class="fw-bold">
+                📄 AI Career Report
+            </h5>
+
+
+            <p class="text-muted">
+                Your personalized career report is ready.
+            </p>
+
+
+
+            {% if report %}
+
+            <a href="{% url 'career_report' report.conversation.id %}"
+               class="btn btn-primary rounded-pill">
+
+                View Report
+
+            </a>
+
+            {% endif %}
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Recommended Careers -->
+
+    <div class="card shadow-sm border-0 rounded-4 mb-4">
+
+
+        <div class="card-body">
+
+
+            <h5 class="fw-bold">
+                🎯 Recommended Careers
+            </h5>
+
+
+            <p class="text-muted">
+                Based on your AI assessment.
+            </p>
+
+
+
+            {% for career in recommended %}
+
+
+            <div class="border rounded-4 p-3 mb-3">
+
+
+                <div class="d-flex justify-content-between align-items-center">
+
+
+                    <div>
+
+                        <h6 class="fw-bold mb-1">
+
+                            {{ career.name }}
+
+                        </h6>
+
+
+                        {% if career.confidence %}
+
+                        <small class="text-muted">
+
+                            Confidence:
+                            {{ career.confidence }}%
+
+                        </small>
+
+                        {% endif %}
+
+
+                    </div>
+
+
+
+                    <a href="{% url 'select_career' career.name %}"
+                       class="btn btn-outline-primary rounded-pill">
+
+
+                        Select Career
+
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            {% empty %}
+
+
+            <p class="text-muted">
+
+                No recommendations available.
+
+            </p>
+
+
+            {% endfor %}
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- Current Career Goal -->
+
+    <div class="card shadow-sm border-0 rounded-4 mb-4">
+
+
+        <div class="card-body">
+
+
+            <h5 class="fw-bold">
+
+                💼 Current Career Goal
+
+            </h5>
+
+
+
+
+            {% if current_career %}
+
+
+
+                <h4 class="mt-3">
+
+                    🐍 {{ current_career.career_name }}
+
+                </h4>
+
+
+
+                <p class="text-muted">
+
+                    Selected on:
+                    {{ current_career.selected_at|date:"d F Y" }}
+
+                </p>
+
+
+
+                <a href="{% url 'change_career' %}"
+                   class="btn btn-outline-secondary rounded-pill">
+
+
+                    Change Career
+
+
+                </a>
+
+
+
+            {% else %}
+
+
+
+                <p class="text-muted">
+
+                    No career selected.
+
+                    Please choose one of the recommended careers.
+
+                </p>
+
+
+
+            {% endif %}
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- Retake -->
+
+    <div class="text-center mb-5">
+
+
+        <a href="{% url 'retake_assessment' %}"
+           class="btn btn-danger rounded-pill px-4">
+
+
+            Retake Assessment
+
+
+        </a>
+
+
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}

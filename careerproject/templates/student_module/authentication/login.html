@@ -1,0 +1,86 @@
+{% extends 'common/base_public.html' %}
+
+{% load static %}
+{%block css%}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{%endblock%}
+
+{%block content%}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card p-4">
+
+                <h2 class="text-center mb-5">Login</h2>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    
+                    <!-- <div class="mb-5">
+                        <label class="form-label">Login As</label>
+
+                        <select class="form-select" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="student">Student</option>
+                            <option value="mentor">Mentor</option>
+                            <option value="mentor">Admin</option>
+                        </select>
+                    </div> -->
+
+                    <div class="mb-3">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="username" placeholder="Enter your username" required>
+                    </div>
+
+                    <!-- <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+
+                        <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                    </div> -->
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter you password" required>
+                    </div>
+
+                    <button class="btn btn-outline-primary w-100">
+                        Login
+                    </button>
+
+                </form>
+
+
+                
+
+                 <p class="text-center mt-3">
+                    New user?
+                    <a href="{% url 'register' %}">Register</a>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% if messages %}
+
+    {% for message in messages %}
+
+    <script>
+
+        Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: "{{ message }}",
+            confirmButtonColor: "#667eea"
+        });
+
+    </script>
+
+    {% endfor %}
+
+{% endif %}
+
+{%endblock%}

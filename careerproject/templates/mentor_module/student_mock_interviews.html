@@ -1,0 +1,80 @@
+{% extends "mentor_module/mentor_base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/student_interviews.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-4">
+
+<h3>{{student.full_name}}'s Interviews</h3>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>#</th>
+
+<th>Career</th>
+
+<th>Difficulty</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+{% for interview in interviews %}
+
+<tr>
+
+<td>{{forloop.counter}}</td>
+
+<td>{{interview.career.career_name}}</td>
+
+<td>{{interview.difficulty}}</td>
+
+<td>
+
+{% if interview.mentor_feedback %}
+
+<span class="badge bg-success">
+
+Evaluated
+
+</span>
+
+{% else %}
+
+<span class="badge bg-warning text-dark">
+
+Not Evaluated
+
+</span>
+
+{% endif %}
+
+</td>
+
+<td>
+
+<a href="{% url 'view_interview_report' interview.id %}"
+class="btn btn-primary">
+
+View Report
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

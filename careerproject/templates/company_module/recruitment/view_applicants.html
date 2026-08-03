@@ -1,0 +1,93 @@
+{% extends "company_module/recruitment/company_base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/view_applicants.css' %}">
+<div class="card shadow-sm rounded-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <h2 style="color: #667eea;">{{ job.job_title }}</h2>
+
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Education</th>
+
+                        <th>Status</th>
+
+                        <th>Resume</th>
+
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+
+                {% for application in applications %}
+
+                <tr>
+
+                <td>{{ application.student.full_name }}</td>
+
+                <td>{{ application.student.qualification }}</td>
+
+                <td>{{ application.status }}</td>
+
+                <td>
+
+                <a href="{% url 'company_resume_view' application.id %}" class="btn btn-primary">
+
+                View Resume
+
+                </a>
+
+                </td>
+
+                <td>
+
+                <a href="{% url 'view_application' application.id %}" class="btn btn-primary">
+
+                View Application
+
+                </a>
+
+                </td>
+
+
+
+                </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            No shortlisted candidates found.
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+                <!-- {% if application.status == "Applied" %}
+                    <span class="status-applied">Applied</span>
+
+                {% elif application.status == "Shortlisted" %}
+                    <span class="status-shortlisted">Shortlisted</span>
+
+                {% elif application.status == "Interview" %}
+                    <span class="status-interview">Interview</span>
+
+                {% elif application.status == "Selected" %}
+                    <span class="status-selected">Selected</span>
+
+                {% else %}
+                    <span class="status-rejected">Rejected</span>
+                {% endif %} -->
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,115 @@
+{% extends 'mentor_module/mentor_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/student_resumes.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h4>{{ student.user.username }}'s Resumes</h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover">
+
+                <thead>
+
+                    <tr>
+
+                        <th>#</th>
+                        <th>Resume Name</th>
+                        <th>Template</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for resume in resumes %}
+
+                    <tr>
+
+                        <td>{{ forloop.counter }}</td>
+
+                        <td>{{ resume.resume_name }}</td>
+
+                        <td>{{ resume.template|title }}</td>
+
+                        <td>
+
+                            {% if resume.mentor_feedback %}
+
+                            <span class="badge bg-success">
+                                <i class="bi bi-check-circle"></i>
+                                Evaluated
+                            </span>
+
+                            {% else %}
+
+                            <span class="badge bg-warning text-dark">
+                                <i class="bi bi-clock"></i>
+                                Not Evaluated
+                            </span>
+
+                            {% endif %}
+
+                            </td>
+
+                        <td>
+
+                            <a href="{% url 'mentor_resume_preview' resume.id %}"
+                               class="btn btn-primary btn-sm">
+
+                                <i class="bi bi-eye"></i>
+                                View Resume
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% empty %}
+
+                    <tr>
+
+                        <td colspan="4" class="text-center">
+
+                            No resumes found.
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            <a href="{% url 'resume_evaluation' %}"
+               class="btn btn-secondary mt-3">
+
+                <i class="bi bi-arrow-left"></i>
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

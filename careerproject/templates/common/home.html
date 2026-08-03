@@ -1,0 +1,267 @@
+{% extends 'common/base_public.html' %}
+
+{%block content%}
+
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>Shape Your Career with AI</h1>
+
+        <p>
+            Discover your perfect career path, identify skill gaps,
+            follow personalized roadmaps and get hired with AI-powered guidance.
+        </p>
+
+        <a href="{% url 'login' %}" class="hero-btn">
+            Get Started
+        </a>
+
+    </div>
+
+</section>
+
+<section class="why-choose mt-5">
+
+    <h2 class="text-center mb-4">Why Choose Career Assistant?</h2>
+    <br>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="why-item">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <div>
+                    <h5>Fast & Easy</h5>
+                    <p>Navigate the platform quickly with a simple interface.</p>
+                </div>
+            </div>
+<br>
+            <div class="why-item">
+                <i class="bi bi-shield-lock-fill"></i>
+                <div>
+                    <h5>Secure</h5>
+                    <p>Your personal data is protected and kept private.</p>
+                </div>
+            </div>
+<br>
+            <div class="why-item">
+                <i class="bi bi-emoji-smile-fill"></i>
+                <div>
+                    <h5>User Friendly</h5>
+                    <p>Clean, intuitive design that is easy to use.</p>
+                </div>
+            </div>
+        </div>
+<br>
+        <div class="col-md-6">
+            <div class="why-item">
+                <i class="bi bi-robot"></i>
+                <div>
+                    <h5>AI Powered</h5>
+                    <p>Personalized recommendations based on your interests and skills.</p>
+                </div>
+            </div>
+<br>
+            <div class="why-item">
+                <i class="bi bi-graph-up-arrow"></i>
+                <div>
+                    <h5>Track Progress</h5>
+                    <p>Monitor your learning journey and achievements.</p>
+                </div>
+            </div>
+<br>
+            <div class="why-item">
+                <i class="bi bi-bullseye"></i>
+                <div>
+                    <h5>Personalized Guidance</h5>
+                    <p>Recommendations tailored specifically to your career goals.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- <section class="hero-section">
+    <div class="container text-center">
+        <h1>Welcome to Career Assistant</h1>
+        <p>Discover • Learn • Build • Get Hired</p>
+
+        {% if not user.is_authenticated %}
+        <a href="">
+            <button class="btn btn-outline-dark">Get Started</button></a>
+        {% endif %}
+
+
+    </div>
+    
+</section>
+
+<div class="container">
+
+    <h2 class="text-center">Our Features</h2>
+<br>
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="card text-center">
+                <div class="card-body">
+                    
+                    <i class="bi bi-robot card-icon"></i>
+                    <h5>AI Career Assessment</h5>
+                    <p>Discover the career that best matches your skills and interests.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-map card-icon"></i>
+                    <h5>Career Roadmap</h5>
+                    <p>Get a personalized step-by-step learning path to reach your career goal.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-bar-chart-line card-icon"></i>
+                    <h5>Skill Gap Analysis</h5>
+                    <p>Identify missing skills and receive recommendations to improve them.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-book card-icon"></i>
+                    <h5>Learning Resources</h5>
+                    <p>Access courses, tutorials, and study materials tailored to your roadmap.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<br>
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="card text-center">
+                <div class="card-body">
+                    
+                    <i class="bi bi-file-earmark-person card-icon"></i>
+                    <h5>Resume Builde</h5>
+                    <p>Create an ATS-friendly resume with AI suggestions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-mic card-icon"></i>
+                    <h5>Mock Interview</h5>
+                    <p>Practice interview questions and receive AI feedback.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-briefcase card-icon"></i>
+                    <h5>Job Recommendation</h5>
+                    <p>Find internships and jobs that match your skills and career goals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-person-workspace card-icon"></i>
+                    <h5>Mentor Support</h5>
+                    <p>Connect with mentors for guidance and career advice.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<section class="why-choose mt-5">
+
+    <h2 class="text-center mb-4">Why Choose Career Assistant?</h2>
+    <br>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="why-item">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <div>
+                    <h5>Fast & Easy</h5>
+                    <p>Navigate the platform quickly with a simple interface.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <i class="bi bi-shield-lock-fill"></i>
+                <div>
+                    <h5>Secure</h5>
+                    <p>Your personal data is protected and kept private.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <i class="bi bi-emoji-smile-fill"></i>
+                <div>
+                    <h5>User Friendly</h5>
+                    <p>Clean, intuitive design that is easy to use.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="why-item">
+                <i class="bi bi-robot"></i>
+                <div>
+                    <h5>AI Powered</h5>
+                    <p>Personalized recommendations based on your interests and skills.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <i class="bi bi-graph-up-arrow"></i>
+                <div>
+                    <h5>Track Progress</h5>
+                    <p>Monitor your learning journey and achievements.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <i class="bi bi-bullseye"></i>
+                <div>
+                    <h5>Personalized Guidance</h5>
+                    <p>Recommendations tailored specifically to your career goals.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section> -->
+
+{%endblock%}

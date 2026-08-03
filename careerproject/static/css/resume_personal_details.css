@@ -1,0 +1,128 @@
+body{
+    background:#f5f7fb;
+    font-family:Arial, sans-serif;
+}
+
+/* Heading */
+
+h2{
+    color:#667eea;
+    font-weight:bold;
+}
+
+.text-muted{
+    font-size:15px;
+}
+
+/* Card */
+
+.card{
+    border:2px solid #667eea;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+/* Labels */
+
+.form-label{
+    font-weight:bold;
+    color:#333;
+    margin-bottom:8px;
+}
+
+/* Form Inputs */
+
+.form-control,
+.form-select{
+    border:1px solid #ced4da;
+    border-radius:8px;
+    padding:12px;
+    transition:.3s;
+    width:100%;
+}
+
+/* Hover */
+
+.form-control:hover,
+.form-select:hover{
+    border-color:#667eea;
+}
+
+/* Focus */
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#667eea;
+    box-shadow:0 0 8px rgba(102,126,234,.3);
+}
+
+/* Textarea */
+
+textarea{
+    resize:none;
+    min-height:150px;
+}
+
+/* Small Text */
+
+small{
+    display:block;
+    margin-top:6px;
+    color:#777;
+}
+
+/* Buttons */
+
+.btn-primary{
+    background:#667eea;
+    border:2px solid #667eea;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    background:white;
+    color:#667eea;
+}
+
+.btn-outline-secondary{
+    border:2px solid #6c757d;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-outline-secondary:hover{
+    background:#6c757d;
+    color:white;
+}
+
+/* Spacing */
+
+.mb-4{
+    margin-bottom:22px !important;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .card-body{
+        padding:25px !important;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    .d-flex{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}

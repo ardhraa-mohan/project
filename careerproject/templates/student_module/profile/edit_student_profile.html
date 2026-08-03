@@ -1,0 +1,132 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card p-4 shadow">
+
+                <h2 class="text-center mb-4">
+                    Complete Student Profile
+                </h2>
+
+                <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label>Profile Picture</label>
+
+                        {% if pro.profile_pic %}
+                            <div class="mb-2">
+                                <img src="{{ pro.profile_pic.url }}"
+                                    class="rounded-circle"
+                                    width="120"
+                                    height="120">
+                            </div>
+                        {% endif %}
+
+                        <input type="file" name="profile_pic" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Full Name</label>
+                        <input type="text" name="full_name" class="form-control" value="{{ pro.full_name }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" class="form-control" value="{{ pro.phone }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Date of Birth</label>
+                        <input type="date" name="dob" class="form-control" value="{{ pro.dob|date:'Y-m-d' }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Gender</label>
+
+                        <select name="gender" class="form-control">
+                            <option value="">Select Gender</option>
+                            <option value="Male" {% if pro.gender == "Male" %}selected{% endif %}>Male</option>
+                            <option value="Female" {% if pro.gender == "Female" %}selected{% endif %}>Female</option>
+                            <option value="Other" {% if pro.gender == "Other" %}selected{% endif %}>Other</option>
+                        </select>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Location</label>
+                        <input type="text" name="location" class="form-control" value="{{ pro.location }}">
+                    </div>
+
+                    
+                    <div class="col-md-6 mb-3">
+                    <label>Qualification</label>
+                    <p>{{ pro.qualification }}</p>
+                    <select name="qualification" class="form-control">
+
+                        <option value="">Select Qualification</option>
+
+                        {% for value, label in pro.QUALIFICATION_CHOICES %}
+                            <option value="{{ value }}"
+                                {% if pro.qualification == value %}selected{% endif %}>
+                                {{ label }}
+                            </option>
+        {% endfor %}
+
+    </select>
+                </div>
+                    <div class="mb-3">
+                        <label>Course</label>
+                        <input type="text" name="course" class="form-control" value="{{ pro.course }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Occupational Status</label>
+                        <select name="occupational_status" class="form-control">
+                            <option value="">Select Status</option>
+                            {% for value, label in pro.OCCUPATIONAL_CHOICES %}
+                                <option value="{{ value }}"
+                                    {% if pro.occupational_status == value %}selected{% endif %}>
+                                    {{ label }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Skills</label>
+                        <textarea name="skills" rows="3" class="form-control">{{ pro.skills }}</textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Career Goal</label>
+                        <textarea name="career_goal" rows="3" class="form-control">{{ pro.career_goal }}</textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Save Profile
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

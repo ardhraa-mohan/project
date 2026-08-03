@@ -1,0 +1,108 @@
+{% extends 'mentor_module/mentor_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card p-4 shadow">
+
+                <h2 class="text-center mb-4">
+                    Complete Mentor Profile
+                </h2>
+
+                <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label>Profile Picture</label>
+
+                        {% if pro.profile_pic %}
+                            <div class="mb-2">
+                                <img src="{{ pro.profile_pic.url }}"
+                                    class="rounded-circle"
+                                    width="120"
+                                    height="120">
+                            </div>
+                        {% endif %}
+
+                        <input type="file" name="profile_pic" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Full Name</label>
+                        <input type="text" name="full_name" class="form-control" value="{{ pro.full_name }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" class="form-control" value="{{ pro.phone }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Gender</label>
+
+                        <select name="gender" class="form-control">
+                            <option value="">Select Gender</option>
+                            <option value="Male" {% if pro.gender == "Male" %}selected{% endif %}>Male</option>
+                            <option value="Female" {% if pro.gender == "Female" %}selected{% endif %}>Female</option>
+                            <option value="Other" {% if pro.gender == "Other" %}selected{% endif %}>Other</option>
+                        </select>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Qualification</label>
+                        <select name="qualification" class="form-control">
+                        <option value="">Select Qualification</option>
+
+                        {% for value, label in qualification_choices %}
+                        <option value="{{ value }}"
+                        {% if pro.qualification == value %}selected{% endif %}>
+                        {{ label }}
+                        </option>
+                        {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Specialization</label>
+                        <input type="text" name="specialization" class="form-control" value="{{ pro.specialization }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Experience (Years)</label>
+                        <input type="number" name="experience" class="form-control" value="{{ pro.experience }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Organization</label>
+                        <input type="text" name="company" class="form-control" value="{{ pro.company }}">
+                    </div>
+
+                    
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Save Profile
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

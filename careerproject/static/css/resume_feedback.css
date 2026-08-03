@@ -1,0 +1,150 @@
+/* Main container */
+
+.feedback-container {
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+
+/* Card */
+
+.feedback-card {
+
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Heading */
+
+.feedback-card h3,
+.feedback-card h4 {
+
+    color: #333;
+    font-weight: 600;
+
+}
+
+
+/* Resume name */
+
+.resume-title {
+
+    font-size: 18px;
+    font-weight: 600;
+    color: #6C63FF;
+
+}
+
+
+/* Feedback text */
+
+.feedback-text {
+
+    background: #f8f9ff;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    margin-top: 15px;
+
+    color: #555;
+
+    line-height: 1.6;
+
+}
+
+
+/* Date */
+
+.feedback-date {
+
+    color: #888;
+
+    font-size: 13px;
+
+    margin-top: 15px;
+
+}
+
+
+
+/* Textarea */
+
+.feedback-form textarea {
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    padding: 15px;
+
+    resize: none;
+
+}
+
+
+.feedback-form textarea:focus {
+
+    border-color: #6C63FF;
+
+    box-shadow: 0 0 5px rgba(108,99,255,0.3);
+
+}
+
+
+
+/* Save button */
+
+.feedback-btn {
+
+    background: #6C63FF;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 25px;
+
+    border-radius:10px;
+
+    margin-top:15px;
+
+    transition:0.3s;
+
+}
+
+
+
+.feedback-btn:hover {
+
+    background:#5548e8;
+
+    color:white;
+
+}
+
+
+
+/* Empty message */
+
+.empty-feedback {
+
+    background:#eef2ff;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    color:#555;
+
+}

@@ -1,0 +1,60 @@
+{% extends 'common/base_private.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h4>{{ resume.resume_name }}</h4>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table">
+
+                <tr>
+                    <th>Resume Name</th>
+                    <td>{{ resume.resume_name }}</td>
+                </tr>
+
+                <tr>
+                    <th>Target Job</th>
+                    <td>{{ resume.target_job }}</td>
+                </tr>
+
+                <tr>
+                    <th>Template</th>
+                    <td>{{ resume.get_template_display }}</td>
+                </tr>
+
+                <tr>
+                    <th>Created</th>
+                    <td>{{ resume.created_at }}</td>
+                </tr>
+
+                <tr>
+                    <th>Mentor Feedback</th>
+                    <td>
+                        {% if resume.mentor_feedback %}
+                            {{ resume.mentor_feedback }}
+                        {% else %}
+                            No feedback yet.
+                        {% endif %}
+                    </td>
+                </tr>
+
+            </table>
+
+            <a href="{% url 'resume_feedback' %}" class="btn btn-secondary">
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

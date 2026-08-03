@@ -1,0 +1,23 @@
+{% extends "common/base_private.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/roadmap.css' %}">
+
+<div class="no-career">
+
+    <h2>🚀 No Career Selected</h2>
+
+    <p>
+        Please complete the Career Assessment and select a career before viewing your personalized roadmap.
+    </p>
+
+    <a href="{% url 'career_assessment' %}">
+        Go to Career Assessment
+    </a>
+
+</div>
+
+{% endblock %}

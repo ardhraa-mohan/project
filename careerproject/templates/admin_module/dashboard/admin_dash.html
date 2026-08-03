@@ -1,0 +1,195 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+{%block css%}
+<link rel="stylesheet" href="{% static 'css/admindash.css' %}">
+{%endblock%}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <section class="hero">
+
+    <div class="hero-text">
+
+        <h1>Welcome Admin</h1>
+
+
+    </div>
+
+</section>
+
+    <div class="row">
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow text-center p-3">
+                <i class="bi bi-mortarboard fs-1 text-primary"></i>
+                <h3>{{ total_students }}</h3>
+                <p>Total Students</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow text-center p-3">
+                <i class="bi bi-person-workspace fs-1 text-success"></i>
+                <h3>{{ total_mentors }}</h3>
+                <p>Total Mentors</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow text-center p-3">
+                <i class="bi bi-building fs-1 text-warning"></i>
+                <h3>{{ total_companies }}</h3>
+                <p>Total Companies</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card shadow text-center p-3">
+                <i class="bi bi-briefcase fs-1 text-danger"></i>
+                <h3>{{ total_jobs }}</h3>
+                <p>Total Jobs Posted</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-3">
+
+    <div class="col-md-4 mb-3">
+
+        <div class="card shadow text-center p-3">
+
+            <i class="bi bi-check-circle-fill fs-1 text-success"></i>
+
+            <h3>{{ approved_jobs }}</h3>
+
+            <p>Approved Jobs</p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+        <div class="card shadow text-center p-3">
+
+            <i class="bi bi-hourglass-split fs-1 text-warning"></i>
+
+            <h3>{{ pending_jobs }}</h3>
+
+            <p>Pending Approval</p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+        <div class="card shadow text-center p-3">
+
+            <i class="bi bi-x-circle-fill fs-1 text-danger"></i>
+
+            <h3>{{ rejected_jobs }}</h3>
+
+            <p>Rejected Jobs</p>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+    <div class="col-md-6 mb-3">
+
+        <div class="card shadow text-center p-3">
+
+            <i class="bi bi-person-check-fill fs-1 text-primary"></i>
+
+            <h3>{{ assigned_students }}</h3>
+
+            <p>Assigned Students</p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6 mb-3">
+
+        <div class="card shadow text-center p-3">
+
+            <i class="bi bi-person-x-fill fs-1 text-danger"></i>
+
+            <h3>{{ unassigned_students }}</h3>
+
+            <p>Unassigned Students</p>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+    <div class="row mt-4">
+
+        <div class="col-md-6">
+
+            <div class="card shadow p-3">
+
+                <h4>Quick Actions</h4>
+
+                <a href="{% url 'add_student' %}" class="btn btn-outline-primary mb-2">
+                    Add Student
+                </a>
+
+                <a href="{% url 'add_mentor' %}" class=" btn btn-outline-primary mb-2">
+                    Add Mentor
+                </a>
+
+                <a href="{% url 'add_company' %}" class="btn btn-outline-primary mb-2">
+                    Add Company
+                </a>
+
+                <a href="{% url 'pending_jobs' %}" class="btn btn-outline-primary">
+                    Review Pending Jobs
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card shadow p-3">
+
+                <h4>Recent Users</h4>
+
+                <table class="table">
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                    </tr>
+
+                    {% for user in recent_users %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.role }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="2">No users found.</td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{%endblock%}

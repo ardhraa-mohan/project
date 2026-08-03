@@ -1,0 +1,88 @@
+{% extends 'common/base_private.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/interview_history.css' %}">
+
+<div class="container">
+
+    <div class="history-card">
+
+        <h2>📋 Interview History</h2>
+
+        <p>
+            View all your previous AI mock interviews.
+        </p>
+
+        {% if interviews %}
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Career</th>
+
+                    <th>Difficulty</th>
+
+                    <th>Score</th>
+
+                    <th>Date</th>
+
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for interview in interviews %}
+
+                <tr>
+
+                    <td>{{ interview.career.career_name }}</td>
+
+                    <td>{{ interview.difficulty }}</td>
+
+                    <td>{{ interview.overall_score }}%</td>
+
+                    <td>{{ interview.created_at|date:"d M Y" }}</td>
+
+                    <td>
+
+                        <a href="{% url 'interview_report' interview.id %}"
+                           class="btn btn-primary btn-sm">
+
+                            View Report
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        {% else %}
+
+        <div class="alert alert-info">
+
+            No interviews completed yet.
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

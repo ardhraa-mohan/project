@@ -1,0 +1,111 @@
+{% extends "common/base_private.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/my_applications.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="application-card">
+
+<h2 class="application-title">
+My Applications
+</h2>
+
+{% if applications %}
+
+<table class="table application-table">
+
+<thead class="application-header">
+
+<tr>
+
+<th>Job</th>
+<th>Company</th>
+<th>Applied Date</th>
+<th>Status</th>
+<th>Resume</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for app in applications %}
+
+<tr>
+
+<td>{{ app.job.job_title }}</td>
+
+<td>{{ app.job.company.company_name }}</td>
+
+<td>{{ app.applied_at|date:"d M Y" }}</td>
+
+<td>
+
+{% if app.status == "Applied" %}
+<span class="status-applied">Applied</span>
+
+{% elif app.status == "Shortlisted" %}
+<span class="badge bg-primary">Shortlisted</span>
+
+{% elif app.status == "Interview" %}
+<span class="badge bg-info text-dark">Interview</span>
+
+{% elif app.status == "Selected" %}
+<span class="badge bg-success">Selected</span>
+
+{% elif app.status == "Rejected" %}
+<span class="badge bg-danger">Rejected</span>
+
+{% endif %}
+
+</td>
+
+<td>
+
+<a
+href="{% url 'resume_preview' app.resume.id %}"
+class="btn btn-sm btn-outline-primary">
+
+View Resume
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% else %}
+
+<div class="empty-card">
+
+<i class="bi bi-briefcase" style="font-size:60px;color:#667eea;"></i>
+
+<h4>No Applications Yet</h4>
+
+<p class="text-muted">
+Start applying for jobs to track your application status.
+</p>
+
+<a href="{% url 'job_portal' %}" class="btn btn-primary">
+Browse Jobs
+</a>
+
+</div>
+
+{% endif %}
+
+</div>
+</div>
+
+{% endblock %}

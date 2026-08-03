@@ -1,0 +1,306 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Container */
+
+.container{
+
+    padding-top:20px;
+
+}
+
+
+
+/* Main Card */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    transition:0.3s ease;
+
+}
+
+
+.card:hover{
+
+    box-shadow:0 10px 25px rgba(102,126,234,0.3);
+
+}
+
+
+
+/* Header */
+
+.card-header{
+
+    background:#667eea;
+
+    color:white;
+
+    border-radius:12px 12px 0 0 !important;
+
+    padding:20px;
+
+}
+
+
+.card-header h2{
+
+    margin:0;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Body */
+
+.card-body{
+
+    padding:35px;
+
+}
+
+
+.card-body h4{
+
+    color:#444;
+
+    font-weight:bold;
+
+}
+
+
+.text-primary{
+
+    color:#667eea !important;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Divider */
+
+hr{
+
+    border-top:2px solid #eee;
+
+}
+
+
+
+/* Course Title */
+
+.card-body > h2{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Course Cards */
+
+.course-card{
+
+    border:1px solid #ddd;
+
+    border-left:5px solid #667eea;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    background:#fafafa;
+
+}
+
+
+.course-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 20px rgba(102,126,234,0.2);
+
+}
+
+
+
+/* Course Text */
+
+.course-text{
+
+    white-space:pre-wrap;
+
+    font-family:Arial, sans-serif;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    color:#333;
+
+    margin:0;
+
+}
+
+
+
+/* ==========================
+      Tablet Responsive
+========================== */
+
+@media(max-width:992px){
+
+
+    .card-body{
+
+        padding:25px;
+
+    }
+
+
+    .course-text{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+      Mobile Responsive
+========================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    .card{
+
+        border-radius:12px;
+
+    }
+
+
+    .card-header{
+
+        padding:15px;
+
+    }
+
+
+    .card-header h2{
+
+        font-size:22px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px 15px;
+
+    }
+
+
+    .card-body h4{
+
+        font-size:18px;
+
+    }
+
+
+    .card-body h2{
+
+        font-size:22px;
+
+    }
+
+
+    .course-card{
+
+        margin-bottom:15px;
+
+    }
+
+
+    .course-text{
+
+        font-size:13px;
+
+        line-height:1.5;
+
+        overflow-wrap:break-word;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+      Small Mobile
+========================== */
+
+@media(max-width:480px){
+
+
+    .card-header h2{
+
+        font-size:20px;
+
+    }
+
+
+    .card-body h2{
+
+        font-size:20px;
+
+    }
+
+
+    .course-text{
+
+        font-size:12px;
+
+    }
+
+
+    .course-card .card-body{
+
+        padding:15px;
+
+    }
+
+
+}

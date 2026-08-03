@@ -1,0 +1,47 @@
+
+{% extends 'mentor_module/mentor_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mentor_stu.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="stat-card">
+
+                <div>
+                    <h6>Student request for mentor</h6>
+                    
+                </div>
+
+                <i class="bi bi-people-fill"></i>
+
+            </div>
+
+        
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="stat-card">
+
+                <div>
+                    <h6>Manage Student</h6>
+                    
+                </div>
+
+                <i class="bi bi-people-fill"></i>
+
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+{%endblock%}

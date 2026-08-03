@@ -1,0 +1,523 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/student_dash.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+    <h2>Welcome, {{ request.user.username }}</h2>
+    <p>Build your career, track your progress and find your dream opportunity.
+</p>
+</div>
+
+<div class="col-12">
+
+    <div class="card mentor-card shadow-sm border-0">
+
+        <div class="card-header mentor-header">
+
+            <h5 class="mb-0">
+                <i class="bi bi-person-workspace"></i>
+                My Mentor
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            {% if mentor %}
+
+                <div class="row align-items-center">
+
+                    <div class="col-md-8">
+
+                        <h6 class="text-muted mb-1">
+                            Assigned Mentor
+                        </h6>
+
+                        <h4 class="fw-bold">
+                            {{ mentor.full_name }}
+                        </h4>
+
+                    </div>
+
+                    <div class="col-md-4 text-md-end">
+
+                        <a href="{% url 'mentor_feedback' %}"
+                           class="btn mentor-btn">
+
+                            <i class="bi bi-chat-left-text"></i>
+                            View Mentor Feedback
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% else %}
+
+                <div class="alert alert-warning mb-0">
+
+                    <i class="bi bi-exclamation-circle"></i>
+
+                    No mentor has been assigned yet.
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="row g-4">
+
+    <div class="col-lg-7">
+
+        <div class="dashboard-card">
+
+<div class="card h-100 shadow-sm">
+
+    <div class="card-body">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <h3>Career Progress</h3>
+
+            <a href="{% url 'career_progress' %}" class="btn btn-sm btn-primary">
+                View All
+            </a>
+
+        </div>
+
+        <p>{{ completed }} of {{ total }} Tasks Completed</p>
+
+        <div class="progress mb-4">
+
+            <div class="progress-bar"
+                 role="progressbar"
+                 style="width: {{ progress }}%;"
+                 aria-valuenow="{{ progress }}"
+                 aria-valuemin="0"
+                 aria-valuemax="100">
+
+            </div>
+
+        </div>
+
+        {% for task in tasks %}
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+
+            <div>
+
+                {% if task.completed %}
+                    <i class="bi bi-check-circle-fill text-success"></i>
+                {% else %}
+                    <i class="bi bi-circle text-secondary"></i>
+                {% endif %}
+
+                {{ task.title }}
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p class="text-muted">No career tasks yet.</p>
+
+        {% endfor %}
+
+        <a href="{% url 'add_task' %}" class="btn btn-outline-primary btn-sm mt-3">
+            <i class="bi bi-plus-circle"></i> Add Task
+        </a>
+
+    </div>
+
+</div>
+            
+                
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+<!-- Application Status -->
+
+
+<div class="col-lg-5">
+
+
+<div class="dashboard-card">
+
+
+<h4 class="section-title">
+Application Status
+</h4>
+
+
+
+<div class="row g-3">
+
+
+<div class="col-6">
+
+
+<div class="status-card">
+
+<h3>
+{{applied}}
+</h3>
+
+<p>
+Applied
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-6">
+
+
+<div class="status-card">
+
+<h3>
+{{pending}}
+</h3>
+
+<p>
+Pending
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="col-6">
+
+
+<div class="status-card">
+
+<h3>
+{{accepted}}
+</h3>
+
+<p>
+Accepted
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="col-6">
+
+
+<div class="status-card">
+
+<h3>
+{{rejected}}
+</h3>
+
+<p>
+Rejected
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Recent Activity
+
+
+<div class="dashboard-card mt-4">
+
+
+<h4 class="section-title">
+Recent Activity
+</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Recommended Jobs -->
+
+
+<div class="dashboard-card mt-4">
+
+
+<h4 class="section-title">
+Recommended Jobs
+</h4>
+
+
+<div class="row g-3">
+
+
+
+{% for job in recommended_jobs %}
+
+
+
+<div class="col-md-4">
+
+
+<div class="card job-card p-3 shadow-sm">
+
+
+<h5>
+{{job.title}}
+</h5>
+
+
+<p>
+{{job.company.company_name}}
+</p>
+
+
+<span class="badge bg-primary">
+
+{{job.job_type}}
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<p>
+No recommended jobs available
+</p>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-white">
+        <h5 class="mb-0">
+            Recently Created Resumes
+        </h5>
+    </div>
+
+    <div class="card-body">
+
+        {% if recent_resumes %}
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead>
+                    <tr>
+                        <th>Resume Name</th>
+                        <th>Target Job</th>
+                        <th>Template</th>
+                        <th>Created</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                {% for resume in recent_resumes %}
+
+                    <tr>
+
+                        <td>{{ resume.resume_name }}</td>
+
+                        <td>{{ resume.target_job.job_title }}</td>
+
+                        <td>
+                            <span class="badge bg-primary">
+                                {{ resume.template|title }}
+                            </span>
+                        </td>
+
+                        <td>{{ resume.created_at|date:"d M Y" }}</td>
+
+                        <td>
+
+                            <a href="{% url 'resume_preview' resume.id %}"
+                               class="btn btn-sm btn-outline-primary">
+                                Open
+                            </a>
+
+                            <a href="{% url 'delete_resume' resume.id %}"
+                               class="btn btn-sm btn-outline-primary">
+                                Delete
+                            </a>
+
+                        </td>
+                        
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    
+
+        {% else %}
+
+        <div class="text-center py-4">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                 width="90"
+                 class="mb-3">
+
+            <h5>No Resume Created Yet</h5>
+
+            <p class="text-muted">
+                Build your first AI-powered ATS resume.
+            </p>
+
+            
+
+        </div>
+
+        {% endif %}
+
+    </div>
+</div>
+
+<div class="dashboard-card mt-4">
+
+    <h4 class="section-title">
+        My Applications
+    </h4>
+
+    <div class="application-box">
+
+        <div class="application-icon">
+            📄
+        </div>
+
+        <h5>
+            Track Your Applications
+        </h5>
+
+        <p class="text-muted">
+            View all the jobs you've applied for and monitor their current application status.
+        </p>
+
+        <a href="{% url 'my_applications' %}"
+           class="btn application-btn">
+            View Applications
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% if profile_incomplete %}
+
+<script>
+Swal.fire({
+    icon: "info",
+    title: "Complete Your Profile",
+    text: "Please complete your student profile.",
+    confirmButtonText: "Complete Now",
+    allowOutsideClick: false
+}).then(() => {
+    window.location.href = "{% url 'edit_student_profile' %}";
+});
+</script>
+
+{% endif %}
+
+{% endblock %}

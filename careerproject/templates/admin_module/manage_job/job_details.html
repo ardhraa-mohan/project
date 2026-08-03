@@ -1,0 +1,55 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+
+
+{% block content %}
+
+<div class="card shadow mt-4">
+
+<div class="card-body">
+
+<h3>{{ job.job_title }}</h3>
+
+<hr>
+
+<p>
+<b>Company:</b>
+{{ job.company.company_name }}
+</p>
+
+
+<p>
+<b>Description:</b>
+{{ job.description }}
+</p>
+
+
+<p>
+<b>Skills:</b>
+{{ job.skills_required }}
+</p>
+
+
+<p>
+<b>Location:</b>
+{{ job.location }}
+</p>
+
+<p>
+<b>Job Type:</b>
+{{ job.job_type }}
+</p>
+
+
+<a href="{% url 'delete_job' job.id %}"
+class="btn btn-danger" onclick="return confirm('Are you sure?')">
+<i class="bi bi-trash"></i>
+Delete Job
+
+</a>
+
+
+</div>
+
+</div>
+
+{% endblock %}

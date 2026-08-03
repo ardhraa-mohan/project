@@ -1,0 +1,97 @@
+{% extends "common/base_private.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h3 class="mb-4">
+
+Apply for
+
+<strong>{{ job.job_title }}</strong>
+
+</h3>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Select Resume
+
+</label>
+
+<select name="resume" id="resume" class="form-select">
+    {% for resume in resumes %}
+        <option value="{{ resume.id }}">
+            {{ resume.resume_name }}
+        </option>
+    {% endfor %}
+</select>
+
+</div>
+
+<div class="mt-3">
+
+    <a id="previewBtn"
+       href="#"
+       target="_blank"
+       class="btn btn-outline-primary">
+
+        👁 Preview Resume
+
+    </a>
+
+</div>
+<br>
+<button
+class="btn btn-primary">
+
+Apply Job
+
+</button>
+
+<a
+href="{% url 'job_portal' %}"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+<script>
+
+const select = document.getElementById("resume");
+const preview = document.getElementById("previewBtn");
+
+function updatePreview(){
+
+    preview.href =
+        "/user/resume/" +
+        select.value +
+        "/preview/apply/{{ job.id }}";
+}
+
+updatePreview();
+
+select.addEventListener("change", updatePreview);
+
+</script>
+
+{% endblock %}
+
+

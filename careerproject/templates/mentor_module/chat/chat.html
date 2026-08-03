@@ -1,0 +1,207 @@
+{% extends "mentor_module/mentor_base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mentor_chat.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="row">
+
+        <!-- Student Details -->
+
+        <div class="col-lg-4">
+
+            <div class="student-card">
+
+                {% if student.profile_pic %}
+                    <img src="{{ student.profile_pic.url }}"
+                         class="student-img">
+                {% else %}
+                    <img src="{% static 'images/default_picture.webp' %}"
+                         class="student-img">
+                {% endif %}
+
+                <h3>
+                    {{ student.full_name }}
+                </h3>
+
+                <span class="badge bg-primary">
+                    Student
+                </span>
+
+                <hr>
+
+                <p>
+                    <strong>Email</strong><br>
+                    {{ student.user.email }}
+                </p>
+
+                <p>
+                    <strong>Phone</strong><br>
+                    {{ student.phone }}
+                </p>
+
+                <p>
+                    <strong>Course</strong><br>
+                    {{ student.course }}
+                </p>
+
+                <p>
+                    <strong>Location</strong><br>
+                    {{ student.location }}
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Chat -->
+
+        <div class="col-lg-8">
+
+            <div class="chat-card">
+
+                <!-- Header -->
+
+                <div class="chat-header">
+
+                    <div class="d-flex align-items-center">
+
+                        {% if student.profile_pic %}
+                            <img src="{{ student.profile_pic.url }}"
+                                 class="chat-avatar">
+                        {% else %}
+                            <img src="{% static 'images/default_picture.webp' %}"
+                                 class="chat-avatar">
+                        {% endif %}
+
+                        <div class="ms-3">
+
+                            <h5 class="mb-0">
+                                {{ student.full_name }}
+                            </h5>
+
+                            <small>
+                                {{ student.user.email }}
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Messages -->
+
+                <div class="chat-body">
+
+                    {% for message in chat_messages %}
+
+                        {% if message.sender == request.user %}
+
+                            <div class="message mentor">
+
+                                {{ message.text }}
+
+                                <br>
+
+                                <small>
+
+                                    {{ message.created_at|date:"h:i A" }}
+
+                                </small>
+
+                            </div>
+
+                        {% else %}
+
+                            <div class="message student">
+
+                                {{ message.text }}
+
+                                <br>
+
+                                <small>
+
+                                    {{ message.created_at|date:"h:i A" }}
+
+                                </small>
+
+                            </div>
+
+                        {% endif %}
+
+                    {% empty %}
+
+                        <div class="empty-chat">
+
+                            <h5>
+
+                                No Messages Yet
+
+                            </h5>
+
+                            <p>
+
+                                Start the conversation with your student.
+
+                            </p>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <!-- Send -->
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="chat-footer">
+
+                        <input
+                            type="text"
+                            name="message"
+                            class="form-control"
+                            placeholder="Type your reply..."
+                            required>
+
+                        <button class="btn btn-primary">
+
+                            <i class="bi bi-send-fill"></i>
+
+                            Send
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+window.onload = function(){
+
+    const chat = document.querySelector(".chat-body");
+
+    chat.scrollTop = chat.scrollHeight;
+
+}
+
+</script>
+
+{% endblock %}

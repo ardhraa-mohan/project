@@ -1,0 +1,275 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Card */
+
+.card{
+
+    border:2px solid #667eea !important;
+
+    border-radius:20px !important;
+
+    background:white;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+    transition:0.3s ease;
+
+}
+
+
+.card:hover{
+
+    box-shadow:0 10px 30px rgba(102,126,234,0.35);
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* Card Body */
+
+.card-body{
+
+    padding:50px !important;
+
+}
+
+
+
+/* Heading */
+
+.card h3{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Current Career */
+
+.card h4{
+
+    color:#667eea !important;
+
+    font-weight:bold;
+
+    margin-top:10px;
+
+}
+
+
+.fs-5{
+
+    color:#444;
+
+}
+
+
+
+/* Description */
+
+.text-muted{
+
+    color:#777 !important;
+
+    line-height:1.6;
+
+}
+
+
+
+/* Buttons */
+
+.btn-primary{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-primary:hover{
+
+    background-color:#5566d8;
+
+    border-color:#5566d8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Cancel Button */
+
+.btn-outline-secondary{
+
+    border:2px solid #667eea;
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+.btn-outline-secondary:hover{
+
+    background-color:#667eea;
+
+    color:white;
+
+    border-color:#667eea;
+
+}
+
+
+
+/* ==========================
+      Tablet Responsive
+========================== */
+
+@media(max-width:992px){
+
+
+    .card-body{
+
+        padding:40px !important;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+      Mobile Responsive
+========================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        margin-top:30px !important;
+
+        padding:0 15px;
+
+    }
+
+
+    .card{
+
+        border-radius:15px !important;
+
+    }
+
+
+    .card-body{
+
+        padding:30px 20px !important;
+
+    }
+
+
+    .card h3{
+
+        font-size:24px;
+
+    }
+
+
+    .card h4{
+
+        font-size:21px;
+
+    }
+
+
+    .fs-5{
+
+        font-size:16px !important;
+
+    }
+
+
+    .mt-4{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+
+    .btn{
+
+        width:100%;
+
+        margin:0 !important;
+
+        padding:12px 20px !important;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+      Small Mobile
+========================== */
+
+@media(max-width:480px){
+
+
+    .card-body{
+
+        padding:25px 15px !important;
+
+    }
+
+
+    .card h3{
+
+        font-size:21px;
+
+    }
+
+
+    .card h4{
+
+        font-size:18px;
+
+    }
+
+
+    .text-muted{
+
+        font-size:14px;
+
+    }
+
+
+}

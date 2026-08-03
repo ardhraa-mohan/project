@@ -1,0 +1,76 @@
+{% extends 'company_module/recruitment/company_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/company_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="card profile-card">
+
+        <div class="text-center">
+
+            <h2>{{ request.user.username }}</h2>
+
+            <p class="text-muted">Company Account</p>
+
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <strong>Company Name</strong>
+                <p>{{ pro.company_name }}</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Email</strong>
+                <p>{{ request.user.email }}</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Industry</strong>
+                <p>{{ pro.industry }}</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Location</strong>
+                <p>{{ pro.location }}</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Website</strong>
+                <p>{{ pro.website }}</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <strong>Contact Number</strong>
+                <p>{{ pro.phone }}</p>
+            </div>
+
+            <div class="col-12">
+                <strong>About Company</strong>
+                <p>{{ pro.about }}</p>
+            </div>
+
+        </div>
+
+        <div class="text-end mt-3">
+
+            <a href="{% url 'edit_company_profile' %}" class="btn btn-outline-primary">
+                <i class="bi bi-pencil-square"></i>
+                Edit Profile
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

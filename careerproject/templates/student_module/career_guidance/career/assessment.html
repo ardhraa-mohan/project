@@ -1,0 +1,137 @@
+{% extends "common/base_private.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/career_assessment.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card chat-card">
+
+        <!-- Header -->
+        <div class="chat-header">
+
+            <h3>🤖 Career Assistant AI</h3>
+
+            <p>
+                Your personal AI career counsellor.
+            </p>
+
+        </div>
+
+
+        <!-- Chat Body -->
+        <div class="card-body">
+
+            <div id="chat-box" class="chat-box">
+
+
+                
+
+
+                
+                <!-- Previous Messages -->
+{% for message in chat_messages %}
+
+    {% if message.sender == "assistant" %}
+
+        <div class="ai-message">
+
+            <div class="ai-bubble">
+
+                <strong>
+                    🤖 Career Assistant
+                </strong>
+
+                <hr class="my-2">
+
+                <p class="mb-0">
+                    {{ message.message|linebreaks }}
+                </p>
+
+            </div>
+
+        </div>
+
+
+    {% else %}
+
+        <div class="user-message">
+
+            <div class="user-bubble">
+
+                <strong>
+                    👤 You
+                </strong>
+
+                <hr class="my-2">
+
+                <p class="mb-0">
+                    {{ message.message|linebreaks }}
+                </p>
+
+            </div>
+
+        </div>
+
+
+    {% endif %}
+
+{% endfor %}
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Footer -->
+        <div class="chat-footer">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        name="message"
+                        class="form-control"
+                        placeholder="Type your answer..."
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button type="submit" class="btn btn-send">
+                        Send
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+const chatBox = document.getElementById("chat-box");
+
+if (chatBox) {
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'common/base_public.html' %}
+
+{% block title %}Mentors - MyWebsite{% endblock %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mentors.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="section-title">Our Mentors</h1>
+    
+    <div class="row mb-5">
+
+{% for mentor in mentors %}
+
+<div class="col-md-4 mb-4">
+    <div class="card feature-card h-100 text-center">
+
+        <div class="card-body p-4">
+
+            {% if mentor.profile_pic %}
+                <img src="{{ mentor.profile_pic.url }}"
+                     class="rounded-circle mb-3"
+                     width="150"
+                     height="150"
+                     alt="{{ mentor.user.username }}">
+            {% else %}
+                <img src="https://ui-avatars.com/api/?name={{ mentor.user.first_name }}+{{ mentor.user.last_name }}&background=667eea&color=fff&size=150"
+                     class="rounded-circle mb-3"
+                     alt="{{ mentor.user.username }}">
+            {% endif %}
+
+
+            <h5 class="card-title">
+                {{ mentor.full_name }}
+            </h5>
+
+
+            <p class="text-primary mb-2">
+                {{ mentor.qualification }}
+            </p>
+
+            <p class="text-primary mb-2">
+                {{ mentor.specialization }}
+            </p>
+
+            <p class="text-primary mb-2">
+                {{ mentor.experience }}
+            </p>
+
+            <p class="text-primary mb-2">
+                {{ mentor.company }}
+            </p>
+
+            <!-- <p class="card-text text-muted small">
+                {{ mentor.bio|default:"Experienced mentor helping students grow." }}
+            </p> -->
+
+
+            <!-- <div class="mt-3">
+                <button class="btn btn-sm btn-outline-primary">
+                    Connect
+                </button>
+            </div> -->
+
+        </div>
+
+    </div>
+</div>
+
+{% empty %}
+
+<div class="col-12 text-center">
+    <p>No mentors available currently.</p>
+</div>
+
+{% endfor %}
+
+</div>
+</div>
+{% endblock %}

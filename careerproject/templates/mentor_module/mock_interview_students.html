@@ -1,0 +1,71 @@
+{% extends "mentor_module/mentor_base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mock_interview_evaluation.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-4">
+
+<h2>Mock Interview Evaluation</h2>
+
+<form method="get">
+
+<input
+type="text"
+name="search"
+value="{{ request.GET.search }}"
+class="form-control mb-3"
+placeholder="Search Student">
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-search"></i>
+    </button>
+
+</form>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>#</th>
+
+<th>Student</th>
+
+<th>Email</th>
+
+<th>Action</th>
+
+</tr>
+
+{% for student in students %}
+
+<tr>
+
+<td>{{forloop.counter}}</td>
+
+<td>{{student.user.username}}</td>
+
+<td>{{student.user.email}}</td>
+
+<td>
+
+<a href="{% url 'student_mock_interviews' student.id %}"
+class="btn btn-primary">
+
+View Interviews
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+body{
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Card */
+
+.card{
+    border: 2px solid #667eea;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.card h2{
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Role Buttons */
+
+.btn-role{
+    border: 2px solid #667eea;
+    color: #667eea;
+    background: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-role:hover{
+    background-color: #667eea;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(102,126,234,0.3);
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+/* user registration */
+/* Form Fields */
+
+form p{
+    margin-bottom: 15px;
+}
+
+form label{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+
+form input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+
+form input:focus{
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102,126,234,0.4);
+}
+
+
+form input:hover{
+    border-color: #667eea;
+}
+
+
+/* Register Button */
+
+button{
+    border: 2px solid #667eea !important;
+    color: #667eea !important;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+button:hover{
+    background-color:#667eea !important;
+    color:white !important;
+}
+
+
+/* Password help text */
+
+.helptext{
+    font-size: 12px;
+    color: gray;
+}
+
+
+/* Error messages */
+
+.errorlist{
+    color:red;
+    font-size:14px;
+    padding:0;
+    list-style:none;
+}

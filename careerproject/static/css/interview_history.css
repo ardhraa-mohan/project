@@ -1,0 +1,39 @@
+body{
+    background:#f5f7fb;
+}
+
+.history-card{
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    margin-top:40px;
+}
+
+h2{
+    color:#6C63FF;
+    font-weight:700;
+}
+
+.table{
+    margin-top:25px;
+}
+
+.table thead{
+    background:#6C63FF;
+    color:white;
+}
+
+.table th,
+.table td{
+    vertical-align:middle;
+}
+
+.btn-primary{
+    background:#6C63FF;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#564ed8;
+}

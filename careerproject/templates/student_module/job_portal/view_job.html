@@ -1,0 +1,43 @@
+{% extends 'company_module/recruitment/company_base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/view_job.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h3>{{ job.job_title }}</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <p><strong>Location:</strong> {{ job.location }}</p>
+
+            <p><strong>Salary:</strong> {{ job.salary }}</p>
+
+            <p><strong>Deadline:</strong> {{ job.deadline }}</p>
+
+            <p><strong>Description:</strong></p>
+            <p>{{ job.description }}</p>
+
+            <p><strong>Skills Required:</strong></p>
+            <p>{{ job.skills_required }}</p>
+
+            <a href="{% url 'manage_jobs' %}" class="btn btn-secondary">
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

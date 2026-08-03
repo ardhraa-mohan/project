@@ -1,0 +1,104 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/admin_manage.css' %}">
+{% endblock %}
+{%block content%}
+<div class="card manage-card shadow">
+
+    <div class="card-header">
+        <i class="bi bi-mortarboard"></i>
+        Student Management
+    </div>
+
+    <div class="card-body">
+
+        <form method="GET" class="d-flex justify-content-end mb-3">
+    <div class="search-box">
+        <input
+            type="text"
+            name="search"
+            class="form-control"
+            placeholder="Search student..."
+            value="{{ request.GET.search }}">
+    </div>
+
+    <button type="submit" class="btn btn-primary ms-2">
+        <i class="bi bi-search"></i>
+    </button>
+</form>
+        
+         <table class="table table-hover">
+
+                <thead>
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Email</th>
+
+                    <th>Phone</th>
+
+                    <th>Career</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for student in students %}
+
+                <tr>
+
+                    <td>{{ student.user.username }}</td>
+
+                    <td>{{ student.user.email }}</td>
+
+                    <td>{{ student.phone }}</td>
+
+                    <td>{% if student.current_career %}
+                        {{ student.current_career.career_name }}
+                        {% else %}
+                        Not Selected
+                        {% endif %}</td>
+
+                    <td>
+
+                        <a href="{% url 'student_details' student.id %}" class="btn btn-sm btn-primary">
+                            View
+                        </a>
+
+                        <a href="{% url 'delete_student' student.id %}" class="btn btn-sm btn-danger">
+                            Delete
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+
+                    <td colspan="5">
+                        No students found.
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+    </div>
+
+</div>
+
+{%endblock%}

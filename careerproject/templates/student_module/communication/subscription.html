@@ -1,0 +1,231 @@
+{% extends 'company_module/recruitment/company_base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/subscription.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold">
+            Choose Your Company Plan
+        </h2>
+
+        <p class="text-muted">
+            Select a plan to start posting jobs and finding candidates
+        </p>
+
+    </div>
+
+
+    <div class="row justify-content-center g-4">
+
+
+        <!-- FREE PLAN -->
+
+        <div class="col-md-4">
+
+            <div class="card plan-card shadow-sm">
+
+                <div class="card-body p-4">
+
+                    <h3 class="fw-bold">
+                        Free
+                    </h3>
+
+
+                    <h1 class="price">
+                        ₹0
+                        <small>/month</small>
+                    </h1>
+
+
+                    <p class="text-muted">
+                        Get started with basic recruitment
+                    </p>
+
+
+                    <hr>
+
+
+                    <ul class="list-unstyled">
+
+                        <li>✓ Post 3 Jobs</li>
+
+                        <li>✓ View Applicants</li>
+
+                        <li>✓ Company Profile</li>
+
+                        <li>✓ Basic Support</li>
+
+                    </ul>
+
+
+                    <a href="{% url 'post_Job' %}" 
+                    class="btn btn-outline-primary w-100 mt-4">
+
+                        Continue Free
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- BASIC PLAN -->
+
+
+        <div class="col-md-4">
+
+
+            <div class="card plan-card popular shadow-lg">
+
+
+                
+
+
+                <div class="card-body p-4">
+
+
+                    <h3 class="fw-bold">
+                        Basic
+                    </h3>
+
+
+                    <h1 class="price">
+
+                        ₹499
+
+                        <small>/month</small>
+
+                    </h1>
+
+
+                    <p class="text-muted">
+                        For growing companies
+                    </p>
+
+
+                    <hr>
+
+
+                    <ul class="list-unstyled">
+
+                        <li>✓ Post 20 Jobs</li>
+
+                        <li>✓ Priority Listing</li>
+
+                        <li>✓ Applicant Management</li>
+
+                        <li>✓ Email Support</li>
+
+
+                    </ul>
+
+
+                    <a href="" 
+                    class="btn btn-outline-primary w-100 mt-4">
+
+                        Upgrade Now
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- PREMIUM PLAN -->
+
+
+        <div class="col-md-4">
+
+
+            <div class="card plan-card shadow-sm">
+
+
+                <div class="card-body p-4">
+
+
+                    <h3 class="fw-bold">
+                        Premium
+                    </h3>
+
+
+                    <h1 class="price">
+
+                        ₹999
+
+                        <small>/month</small>
+
+                    </h1>
+
+
+                    <p class="text-muted">
+                        Unlimited recruitment
+                    </p>
+
+
+                    <hr>
+
+
+                    <ul class="list-unstyled">
+
+
+                        <li>✓ Unlimited Jobs</li>
+
+                        <li>✓ Featured Jobs</li>
+
+                        <li>✓ Advanced Filters</li>
+
+                        <li>✓ Priority Support</li>
+
+
+                    </ul>
+
+
+
+                    <a href="" 
+                    class="btn btn-outline-primary w-100 mt-4">
+
+                        Upgrade Now
+
+                    </a>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

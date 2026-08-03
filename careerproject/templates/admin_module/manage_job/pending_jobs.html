@@ -1,0 +1,107 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/pending_jobs.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-4">
+
+<h3>
+    <i class="bi bi-briefcase"></i>
+    Pending Jobs
+</h3>
+
+
+<table class="table table-bordered mt-4">
+
+<thead class="table-dark">
+
+<tr>
+    <th>#</th>
+    <th>Job Title</th>
+    <th>Company</th>
+    <th>Posted Date</th>
+    <th>Action</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+{% for job in jobs %}
+
+<tr>
+
+<td>{{ forloop.counter }}</td>
+
+<td>
+{{ job.job_title }}
+</td>
+
+
+<td>
+{{ job.company.company_name }}
+</td>
+
+
+<td>
+{{ job.posted_on }}
+</td>
+
+
+<td>
+
+<a href="{% url 'admin_job_detail' job.id %}"
+class="btn btn-primary btn-sm">
+
+<i class="bi bi-eye"></i>
+View
+
+</a>
+
+
+<a href="{% url 'approve_job' job.id %}"
+class="btn btn-success btn-sm">
+
+<i class="bi bi-check-circle"></i>
+Approve
+
+</a>
+
+
+<a href="{% url 'reject_job' job.id %}"
+class="btn btn-danger btn-sm">
+
+<i class="bi bi-x-circle"></i>
+Reject
+
+</a>
+
+
+</td>
+
+</tr>
+
+
+{% empty %}
+
+<tr>
+<td colspan="5" class="text-center">
+No pending jobs
+</td>
+</tr>
+
+{% endfor %}
+
+
+</tbody>
+
+</table>
+
+
+</div>
+
+{% endblock %}

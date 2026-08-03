@@ -1,0 +1,204 @@
+body{
+    background-color:#f5f7fb;
+    font-family:Arial, sans-serif;
+}
+
+/* Heading */
+
+h2{
+    color:#667eea;
+    font-weight:bold;
+}
+
+.text-muted{
+    font-size:15px;
+}
+
+
+
+/* Card */
+
+.card{
+    border:2px solid #667eea;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+/* Labels */
+
+.form-label{
+    font-weight:bold;
+    color:#333;
+}
+
+/* Input, Select and Textarea */
+
+.form-control,
+.form-select{
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:10px;
+    transition:0.3s;
+}
+
+/* Hover Effect */
+
+.form-control:hover,
+.form-select:hover,
+textarea:hover{
+    border-color:#667eea;
+}
+
+/* Focus Effect */
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus{
+    border-color:#667eea;
+    box-shadow:0 0 6px rgba(102,126,234,0.4);
+}
+
+/* Readonly Fields */
+
+.form-control[readonly],
+textarea[readonly]{
+    background-color:#f8f9fa;
+    color:#555;
+}
+
+/* Textarea */
+
+textarea{
+    resize:none;
+}
+
+/* Button */
+
+.btn-primary{
+    background-color:#667eea;
+    border:2px solid #667eea;
+    border-radius:8px;
+    padding:10px 30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-primary:hover{
+    background-color:white;
+    color:#667eea;
+    border:2px solid #667eea;
+}
+
+/* Space Between Fields */
+
+.mb-3,
+.mb-4{
+    margin-bottom:20px !important;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .card-body{
+        padding:20px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+}
+
+/* ================= Resume Template ================= */
+
+.template-card{
+    cursor:pointer;
+    display:block;
+}
+
+.template-card .card{
+    border:2px solid #ddd;
+    border-radius:12px;
+    transition:.3s;
+    height:350px;               /* Same height for all cards */
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.template-card .card:hover{
+    border-color:#667eea;
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(102,126,234,.2);
+}
+
+/* Selected Card */
+
+/* .template-card input:checked + .card{
+    border:3px solid #667eea;
+    background:#f7f8ff;
+} */
+
+/* Resume Preview Image */
+
+.template-card img{
+    width:100%;
+    height:290px;               /* Same image height */
+    object-fit:cover;           /* Crop neatly */
+    border-radius:8px;
+}
+
+/* Template Name */
+
+.template-card h6{
+    margin-top:10px;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+}
+
+.check-icon{
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    width:28px;
+
+    height:28px;
+
+    background:#667eea;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+.template-card{
+
+    position:relative;
+
+}
+
+.template-radio:checked + .card .check-icon{
+
+    display:flex;
+
+}

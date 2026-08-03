@@ -1,0 +1,165 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/personal_details.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold">
+            Personal Details
+        </h2>
+
+        <p class="text-muted">
+            Fill in your personal information for your resume.
+        </p>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body p-5">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <!-- Full Name -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Full Name
+
+                    </label>
+
+                    {{ form.full_name }}
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Email Address
+
+                    </label>
+
+                    {{ form.email }}
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Phone Number
+
+                    </label>
+
+                    {{ form.phone }}
+
+                </div>
+
+                <!-- Location -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Location
+
+                    </label>
+
+                    {{ form.location }}
+
+                </div>
+
+                <!-- LinkedIn -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        LinkedIn <span class="text-muted">(Optional)</span>
+
+                    </label>
+
+                    {{ form.linkedin }}
+
+                </div>
+
+                <!-- GitHub -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        GitHub <span class="text-muted">(Optional)</span>
+
+                    </label>
+
+                    {{ form.github }}
+
+                </div>
+
+                <!-- Professional Summary -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Professional Summary
+
+                    </label>
+
+                    {{ form.summary }}
+
+                    <!-- <small class="text-muted">
+
+                        Write a short introduction about yourself.
+                        Later, Career Assistant AI can improve it.
+
+                    </small> -->
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="d-flex justify-content-between mt-5">
+
+                    <a href="{% url 'resume_builder' %}"
+                       class="btn btn-outline-secondary">
+
+                        ← Back
+
+                    </a>
+
+                    <button type="submit"
+                            class="btn btn-primary px-5">
+
+                        Continue →
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

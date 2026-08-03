@@ -1,0 +1,47 @@
+{% extends 'common/base_public.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card p-4">
+
+                <h2 class="text-center mb-4">
+                    {{ title }}
+                </h2>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button class="btn btn-outline-primary w-100">
+                        {{ button }}
+                    </button>
+
+                </form>
+
+                <p class="text-center mt-3">
+                    Already have an account?
+                    <a href="{% url 'login' %}">
+                        Login
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

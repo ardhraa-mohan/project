@@ -1,0 +1,108 @@
+{% extends "mentor_module/mentor_base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/chat_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="card shadow">
+
+        <div class="card-header d-flex justify-content-between align-items-center">
+
+            <h3 class="mb-0">
+                Chats
+            </h3>
+
+            <form method="GET">
+                <input
+                    type="text"
+                    name="search"
+                    value="{{ search }}"
+                    placeholder="Search Student"
+                    class="form-control search-input">
+                    <button type="submit" class="btn btn-primary search-btn">
+        <i class="bi bi-search"></i>
+    </button>
+            </form>
+
+
+        </div>
+
+        <div class="card-body">
+
+            {% for room in rooms %}
+
+            <div class="chat-user d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <h5 class="mb-1">
+                        {{ room.student.full_name }}
+                    </h5>
+
+                    {% if room.last %}
+
+                        <p class="text-muted mb-1">
+                            {{ room.last.text|truncatechars:40 }}
+                        </p>
+
+                    {% else %}
+
+                        <p class="text-muted mb-1">
+                            No messages yet
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+                <div class="text-end">
+
+                    {% if room.unread %}
+
+                        <span class="badge bg-danger mb-2">
+                            {{ room.unread }} New
+                        </span>
+
+                        <br>
+
+                    {% endif %}
+
+                    <a href="{% url 'mentor_chat' room.id %}"
+                       class="btn btn-primary btn-sm">
+
+                        <i class="bi bi-chat-dots"></i>
+
+                        Open Chat
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% if not forloop.last %}
+            <hr>
+            {% endif %}
+
+            {% empty %}
+
+            <div class="text-center py-5">
+
+                <h5>No Students Found</h5>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

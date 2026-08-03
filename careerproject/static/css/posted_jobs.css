@@ -1,0 +1,302 @@
+body{
+
+    background:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Container */
+
+.container{
+
+    padding-bottom:40px;
+
+}
+
+
+
+/* Heading */
+
+h3{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Table */
+
+.table{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+}
+
+
+
+/* Header */
+
+.table-dark{
+
+    background:#667eea !important;
+
+}
+
+
+
+.table thead th{
+
+    background:#667eea !important;
+
+    color:white;
+
+    text-align:center;
+
+    padding:15px;
+
+    border:none;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Table Data */
+
+.table tbody td{
+
+    text-align:center;
+
+    vertical-align:middle;
+
+    padding:14px;
+
+    color:#444;
+
+}
+
+
+
+/* Row Hover */
+
+.table tbody tr{
+
+    transition:.3s ease;
+
+}
+
+
+
+.table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+
+
+/* Job title */
+
+.table tbody td:nth-child(2){
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Company */
+
+.table tbody td:nth-child(3){
+
+    font-weight:600;
+
+}
+
+
+
+/* Badges */
+
+.badge{
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+
+/* Open Status */
+
+.bg-success{
+
+    background:#198754 !important;
+
+}
+
+
+
+/* Closed Status */
+
+.bg-danger{
+
+    background:#dc3545 !important;
+
+}
+
+
+
+/* Buttons */
+
+.btn-primary{
+
+    background:#667eea !important;
+
+    border-color:#667eea !important;
+
+    border-radius:20px;
+
+    padding:6px 15px;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn-primary:hover{
+
+    background:#5566d8 !important;
+
+}
+
+
+
+.btn-danger{
+
+    border-radius:20px;
+
+    padding:6px 15px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Empty */
+
+.text-center{
+
+    padding:30px !important;
+
+    color:#777;
+
+}
+
+
+
+/* ======================
+        Tablet
+====================== */
+
+@media(max-width:992px){
+
+
+    .table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* ======================
+        Mobile
+====================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    h3{
+
+        text-align:center;
+
+        font-size:22px;
+
+    }
+
+
+    .table{
+
+        min-width:950px;
+
+    }
+
+
+    .btn-primary,
+    .btn-danger{
+
+        margin:3px;
+
+        font-size:12px;
+
+        padding:6px 12px;
+
+    }
+
+
+}
+
+
+
+/* ======================
+        Small Mobile
+====================== */
+
+@media(max-width:480px){
+
+
+    h3{
+
+        font-size:20px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+}

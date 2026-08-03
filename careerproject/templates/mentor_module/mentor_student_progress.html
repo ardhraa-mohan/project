@@ -1,0 +1,211 @@
+{% extends 'mentor_module/mentor_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mentor_student_progress.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h4>Student Progress</h4>
+        </div>
+
+        <div class="card-body">
+
+            <h5>Student Details</h5>
+            <hr>
+
+            <p><strong>Name :</strong> {{ student.user.username }}</p>
+
+            <p><strong>Email :</strong> {{ student.user.email }}</p>
+
+            <p><strong>Phone :</strong> {{ student.phone }}</p>
+
+            <p>
+                <strong>Career Goal :</strong>
+
+                {% if career %}
+                    {{ career.career_name }}
+                {% else %}
+                    Not Selected
+                {% endif %}
+            </p>
+
+            <hr>
+
+            <h5>Career Assessment</h5>
+            <hr>
+
+            {% if report %}
+
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <h6 class="text-primary">Recommended Careers</h6>
+
+                    {% if report.recommended_careers %}
+
+                    <ul class="mb-3">
+                        {% for career in report.recommended_careers %}
+                            <li>{{ career }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    {% else %}
+
+                    <p>No career recommendations available.</p>
+
+                    {% endif %}
+
+                    <h6 class="text-primary">Assessment Summary</h6>
+
+                    <div class="border rounded p-3 bg-light">
+                        {{ report.report|linebreaks }}
+                    </div>
+
+                </div>
+            </div>
+
+            {% else %}
+
+            <div class="alert alert-warning">
+                No career assessment available.
+            </div>
+
+            {% endif %}
+
+            <hr>
+
+            <h5>Career Roadmap</h5>
+
+                    {% if roadmap %}
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <div class="bg-light p-4 rounded">
+
+                    <pre style="white-space: pre-wrap; font-family: inherit; margin:0;">
+        {{ roadmap.roadmap }}
+                    </pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-warning">
+            No roadmap has been generated yet.
+        </div>
+
+        {% endif %}
+
+            <hr>
+
+            <h5>Skill Gap</h5>
+
+            {% if skill_gap %}
+
+                <p>{{ skill_gap.report|linebreaks }}</p>
+
+            {% else %}
+
+                <p>No skill gap analysis available.</p>
+
+            {% endif %}
+
+            <hr>
+
+            <h5>Job Applications</h5>
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>Applied</th>
+                    <td>{{ applied }}</td>
+                </tr>
+
+                <tr>
+                    <th>Shortlisted</th>
+                    <td>{{ shortlisted }}</td>
+                </tr>
+
+                <tr>
+                    <th>Rejected</th>
+                    <td>{{ rejected }}</td>
+                </tr>
+
+                <tr>
+                    <th>Pending</th>
+                    <td>{{ pending }}</td>
+                </tr>
+
+
+            </table>
+
+                <hr class="my-4">
+
+<div class="card shadow-sm">
+
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">
+            <i class="bi bi-chat-left-text"></i>
+            Mentor Feedback
+        </h5>
+    </div>
+
+    <div class="card-body">
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Feedback / Suggestions
+                </label>
+
+                <textarea
+                    name="feedback"
+                    class="form-control"
+                    rows="6"
+                    placeholder="Write your feedback for this student...">{% if feedback %}{{ feedback.feedback }}{% endif %}</textarea>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-success">
+
+                <i class="bi bi-save"></i>
+                Save Feedback
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+            <a href="{% url 'my_students' %}"
+           class="btn btn-outline-secondary ms-2">
+            ← Back
+        </a>
+        </div>
+        
+    </div>
+
+</div>
+
+{% endblock %}

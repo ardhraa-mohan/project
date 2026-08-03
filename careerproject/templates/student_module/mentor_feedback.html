@@ -1,0 +1,79 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mentor_feedback.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if mentor %}
+
+<div class="mentor-info mb-3">
+
+    <strong>Mentor:</strong>
+
+    {{ mentor.full_name }}
+
+</div>
+
+{% endif %}
+
+    <div class="feedback-card">
+
+        <div class="feedback-header">
+
+            <h4>
+                <i class="bi bi-chat-left-text feedback-icon"></i>
+                Career Mentor Feedback
+            </h4>
+
+        </div>
+
+        <div class="feedback-body">
+
+            {% if feedback %}
+
+                <div class="feedback-date">
+
+                    <i class="bi bi-calendar-event"></i>
+
+                    Last Updated :
+                    {{ feedback.updated_at|date:"d M Y, h:i A" }}
+
+                </div>
+
+                <div class="feedback-content">
+
+                    {{ feedback.feedback|linebreaks }}
+
+                </div>
+
+            {% else %}
+
+                <div class="no-feedback">
+
+                    <i class="bi bi-exclamation-circle"></i>
+
+                    Your mentor has not provided any career feedback yet.
+
+                </div>
+
+            {% endif %}
+
+            <a href="{% url 'student_dashboard' %}"
+               class="btn btn-primary back-btn">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{%endblock%}

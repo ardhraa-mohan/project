@@ -1,0 +1,53 @@
+body{
+
+    background:#f5f7fb;
+
+    font-family:Arial,sans-serif;
+
+}
+
+.card{
+
+    border-radius:12px;
+
+    border:2px solid #667eea;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+h2{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+.btn-primary{
+
+    background:#667eea;
+
+    border:2px solid #667eea;
+
+}
+
+.btn-primary:hover{
+
+    background:white;
+
+    color:#667eea;
+
+}
+
+.btn-success{
+
+    border-radius:8px;
+
+}
+
+.card h5{
+
+    color:#667eea;
+
+}

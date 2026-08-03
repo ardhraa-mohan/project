@@ -1,0 +1,99 @@
+.career-report-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:0;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+}
+
+.report-title{
+
+    background:#667eea;
+
+    color:#fff;
+
+    padding:18px 28px;
+
+    font-size:26px;
+
+    font-weight:600;
+
+}
+
+.report-info{
+
+    margin:25px;
+
+    background:#eef6ff;
+
+    border-left:5px solid #667eea;
+
+    padding:18px;
+
+    border-radius:12px;
+
+}
+
+.report-info i{
+
+    color:#2563eb;
+
+    font-size:22px;
+
+    margin-right:8px;
+
+}
+
+.report-body{
+
+    padding:0 30px 30px;
+
+    color:#444;
+
+    font-size:17px;
+
+    line-height:2;
+
+    white-space:pre-wrap;
+
+}
+
+.report-body strong{
+
+    color:#2563eb;
+
+}
+
+.report-body h1,
+.report-body h2,
+.report-body h3{
+
+    color:#2563eb;
+
+    margin-top:30px;
+
+    margin-bottom:15px;
+
+}
+
+@media(max-width:768px){
+
+.report-title{
+
+    font-size:22px;
+
+}
+
+.report-body{
+
+    padding:20px;
+
+}
+
+}

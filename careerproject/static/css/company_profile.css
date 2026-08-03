@@ -1,0 +1,31 @@
+body{
+    background:#f5f7fa;
+    font-family:Arial,sans-serif;
+}
+
+.profile-card{
+    border:none;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+
+h2{
+    color:#667eea;
+    font-weight:bold;
+}
+
+strong{
+    color:#555;
+}
+
+.btn-outline-primary{
+    border:2px solid #667eea;
+    color:#667eea;
+}
+
+.btn-outline-primary:hover{
+    background:#667eea;
+    color:white;
+}

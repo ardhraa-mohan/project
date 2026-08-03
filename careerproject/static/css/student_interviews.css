@@ -1,0 +1,276 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Container */
+
+.container{
+
+    padding-bottom:40px;
+
+}
+
+
+
+/* Heading */
+
+.container h3{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* Table */
+
+.table{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* Table Header */
+
+.table th{
+
+    background-color:#667eea !important;
+
+    color:white;
+
+    text-align:center;
+
+    padding:15px;
+
+    font-weight:bold;
+
+    border:none;
+
+}
+
+
+
+/* Table Body */
+
+.table td{
+
+    padding:14px;
+
+    text-align:center;
+
+    vertical-align:middle;
+
+    color:#444;
+
+}
+
+
+
+/* Row Hover */
+
+.table tbody tr{
+
+    transition:0.3s ease;
+
+}
+
+
+.table tbody tr:hover{
+
+    background-color:#f8f9ff;
+
+}
+
+
+
+/* Status Badge */
+
+.badge{
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+.bg-success{
+
+    background-color:#28a745 !important;
+
+}
+
+
+.bg-warning{
+
+    background-color:#ffc107 !important;
+
+}
+
+
+
+/* View Report Button */
+
+.btn-primary{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+    border-radius:25px;
+
+    padding:8px 20px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-primary:hover{
+
+    background-color:#5566d8;
+
+    border-color:#5566d8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* =========================
+      Tablet
+========================= */
+
+@media(max-width:992px){
+
+
+    .table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+      Mobile
+========================= */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+    .container h3{
+
+        font-size:22px;
+
+    }
+
+
+
+    /* Horizontal table scroll */
+
+    .table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+
+    .table th,
+    .table td{
+
+        padding:12px;
+
+    }
+
+
+    .btn-primary{
+
+        font-size:13px;
+
+        padding:7px 15px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+      Small Mobile
+========================= */
+
+@media(max-width:480px){
+
+
+    .container h3{
+
+        font-size:20px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+    .btn-primary{
+
+        width:100%;
+
+    }
+
+
+    .badge{
+
+        font-size:11px;
+
+        padding:6px 10px;
+
+    }
+
+
+}

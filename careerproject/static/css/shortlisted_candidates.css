@@ -1,0 +1,291 @@
+body{
+
+    background:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Card */
+
+.card{
+
+    background:white;
+
+    border:2px solid #667eea;
+
+    border-radius:18px !important;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+    margin:30px;
+
+}
+
+
+
+.card-body{
+
+    padding:30px;
+
+}
+
+
+
+/* Table */
+
+.table{
+
+    margin:0;
+
+    background:white;
+
+}
+
+
+
+/* Table Header */
+
+.table thead th{
+
+    background:#667eea;
+
+    color:white;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    padding:15px;
+
+    border:none;
+
+}
+
+
+
+/* Table Body */
+
+.table tbody td{
+
+    padding:15px;
+
+    text-align:center;
+
+    vertical-align:middle;
+
+    color:#444;
+
+}
+
+
+
+/* Hover */
+
+.table tbody tr{
+
+    transition:0.3s ease;
+
+}
+
+
+.table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+
+
+/* Candidate Name */
+
+.table tbody td:first-child{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Badges */
+
+.badge{
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+
+.bg-success{
+
+    background:#198754 !important;
+
+}
+
+
+
+.bg-warning{
+
+    background:#ffc107 !important;
+
+}
+
+
+
+/* View Profile Button */
+
+.btn-primary{
+
+    background:#667eea !important;
+
+    border-color:#667eea !important;
+
+    border-radius:25px;
+
+    padding:8px 20px;
+
+    font-weight:bold;
+
+    transition:.3s ease;
+
+}
+
+
+
+.btn-primary:hover{
+
+    background:#5566d8 !important;
+
+    border-color:#5566d8 !important;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Empty Message */
+
+.text-center{
+
+    color:#777;
+
+    padding:30px !important;
+
+}
+
+
+
+/* =====================
+       Tablet
+===================== */
+
+@media(max-width:992px){
+
+
+    .card{
+
+        margin:20px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+
+    .table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* =====================
+       Mobile
+===================== */
+
+@media(max-width:768px){
+
+
+    .card{
+
+        margin:15px;
+
+    }
+
+
+    .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .table{
+
+        min-width:850px;
+
+    }
+
+
+    .btn-primary{
+
+        font-size:13px;
+
+        padding:7px 15px;
+
+    }
+
+
+}
+
+
+
+/* =====================
+       Small Mobile
+===================== */
+
+@media(max-width:480px){
+
+
+    .card{
+
+        margin:10px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+    .btn-primary{
+
+        width:100%;
+
+    }
+
+
+}

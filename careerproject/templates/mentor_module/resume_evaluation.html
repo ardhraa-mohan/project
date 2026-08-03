@@ -1,0 +1,94 @@
+{% extends 'mentor_module/mentor_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mentor_resume_evaluation.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2>Resume Evaluation</h2>
+
+        <form method="GET">
+            <input
+                type="text"
+                name="search"
+                value="{{ request.GET.search }}"
+                class="form-control"
+                placeholder="Search Student">
+
+                <button type="submit" class="btn btn-primary">
+                <i class="bi bi-search"></i>
+    </button>
+        </form>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-hover">
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Student</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for student in students %}
+
+                <tr>
+
+                    <td>{{ forloop.counter }}</td>
+
+                    <td>{{ student.full_name }}</td>
+
+                    <td>{{ student.user.email }}</td>
+
+                    <td>
+
+                        <a href="{% url 'student_resumes' student.id %}"
+   class="btn btn-primary btn-sm">
+    <i class="bi bi-file-earmark-text"></i>
+    View Resumes
+</a>
+
+                    </td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+
+                    <td colspan="4" class="text-center">
+                        No students assigned.
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

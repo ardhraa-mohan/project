@@ -1,0 +1,485 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* ======================
+   Student Profile Card
+====================== */
+
+.student-card{
+
+    background:white;
+
+    border:2px solid #667eea;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+.student-img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #667eea;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.student-card h3{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+.student-card .badge{
+
+    background:#667eea !important;
+
+    padding:8px 18px;
+
+    border-radius:20px;
+
+}
+
+
+
+.student-card hr{
+
+    border-top:2px solid #eee;
+
+}
+
+
+
+.student-card p{
+
+    text-align:left;
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+
+
+.student-card strong{
+
+    color:#333;
+
+}
+
+
+
+/* ======================
+        Chat Card
+====================== */
+
+.chat-card{
+
+    background:white;
+
+    border:2px solid #667eea;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* Chat Header */
+
+.chat-header{
+
+    background:#667eea;
+
+    color:white;
+
+    padding:18px 25px;
+
+}
+
+
+
+.chat-avatar{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid white;
+
+}
+
+
+
+.chat-header h5{
+
+    font-weight:bold;
+
+}
+
+
+
+.chat-header small{
+
+    opacity:.9;
+
+}
+
+
+
+/* ======================
+       Chat Messages
+====================== */
+
+.chat-body{
+
+    height:450px;
+
+    overflow-y:auto;
+
+    padding:25px;
+
+    background:#f8f9ff;
+
+}
+
+
+
+/* Messages */
+
+.message{
+
+    max-width:70%;
+
+    padding:12px 18px;
+
+    margin-bottom:15px;
+
+    border-radius:18px;
+
+    line-height:1.5;
+
+    font-size:15px;
+
+}
+
+
+
+.message small{
+
+    font-size:11px;
+
+    opacity:.7;
+
+}
+
+
+
+/* Mentor Message */
+
+.message.mentor{
+
+    background:#667eea;
+
+    color:white;
+
+    margin-left:auto;
+
+    border-bottom-right-radius:5px;
+
+}
+
+
+
+/* Student Message */
+
+.message.student{
+
+    background:white;
+
+    color:#333;
+
+    border:1px solid #ddd;
+
+    margin-right:auto;
+
+    border-bottom-left-radius:5px;
+
+}
+
+
+
+/* Empty Chat */
+
+.empty-chat{
+
+    text-align:center;
+
+    margin-top:120px;
+
+    color:#777;
+
+}
+
+
+
+.empty-chat h5{
+
+    color:#667eea;
+
+}
+
+
+
+/* ======================
+       Footer
+====================== */
+
+.chat-footer{
+
+    display:flex;
+
+    gap:10px;
+
+    padding:15px;
+
+    background:white;
+
+    border-top:1px solid #eee;
+
+}
+
+
+
+.chat-footer .form-control{
+
+    border-radius:25px;
+
+    border:1px solid #ccc;
+
+    padding:12px 18px;
+
+}
+
+
+
+.chat-footer .form-control:focus{
+
+    border-color:#667eea;
+
+    box-shadow:0 0 8px rgba(102,126,234,0.4);
+
+}
+
+
+
+/* Send Button */
+
+.chat-footer .btn-primary{
+
+    background:#667eea;
+
+    border-color:#667eea;
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+}
+
+
+
+.chat-footer .btn-primary:hover{
+
+    background:#5566d8;
+
+    border-color:#5566d8;
+
+}
+
+
+
+/* ======================
+       Tablet
+====================== */
+
+@media(max-width:992px){
+
+
+    .student-card{
+
+        margin-bottom:25px;
+
+    }
+
+
+    .chat-body{
+
+        height:400px;
+
+    }
+
+
+}
+
+
+
+/* ======================
+       Mobile
+====================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+
+    .student-card{
+
+        padding:20px;
+
+    }
+
+
+
+    .student-img{
+
+        width:100px;
+
+        height:100px;
+
+    }
+
+
+
+    .chat-header{
+
+        padding:15px;
+
+    }
+
+
+
+    .chat-body{
+
+        height:350px;
+
+        padding:15px;
+
+    }
+
+
+
+    .message{
+
+        max-width:85%;
+
+        font-size:14px;
+
+    }
+
+
+
+    .chat-footer{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .chat-footer .btn-primary{
+
+        width:100%;
+
+    }
+
+
+}
+
+
+
+/* ======================
+       Small Mobile
+====================== */
+
+@media(max-width:480px){
+
+
+    .student-card h3{
+
+        font-size:21px;
+
+    }
+
+
+    .chat-header h5{
+
+        font-size:16px;
+
+    }
+
+
+    .chat-body{
+
+        height:300px;
+
+    }
+
+
+    .message{
+
+        max-width:90%;
+
+        padding:10px 14px;
+
+    }
+
+
+}

@@ -1,0 +1,264 @@
+*{
+    margin:0;
+    box-sizing:border-box;
+}
+body{
+    background:#f5f7fb;
+    font-family:Arial,sans-serif;
+}
+
+/* =======================
+   Search Box
+======================= */
+
+.search-box{
+    background:#fff;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.input-group-text{
+    background:#fff;
+    border-right:none;
+    border-radius:10px 0 0 10px;
+}
+
+.form-control{
+    border-left:none;
+    height:48px;
+    box-shadow:none;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border-color:#ced4da;
+}
+
+.form-select{
+    height:48px;
+    border-radius:10px;
+    box-shadow:none;
+}
+
+.form-select:focus{
+    box-shadow:none;
+}
+
+.search-btn{
+    height:48px;
+    border-radius:10px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.search-btn:hover{
+    transform:scale(1.03);
+}
+
+/* Job Card */
+
+.job-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.job-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+/* Company Logo */
+
+/* .logo{
+    width:60px;
+    height:60px;
+    border-radius:15px;
+    background:#667eea;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:bold;
+    flex-shrink:0;
+} */
+
+/*  Job Details */
+
+.job-title{
+    font-size:22px;
+    font-weight:700;
+    color:#222;
+}
+
+.company{
+    color:#666;
+    font-size:15px;
+}
+
+.company i{
+    color:#667eea;
+    margin-right:5px;
+}
+
+.job-meta span{
+    color:#555;
+    font-size:15px;
+}
+
+.job-meta i{
+    margin-right:5px;
+}
+
+/* Salary */
+
+.salary{
+    color:#198754;
+    font-weight:bold;
+}
+
+/* Skill Badge */
+
+/* .skill{
+    display:inline-block;
+    background:#eef2ff;
+    color:#667eea;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:500;
+} */
+
+/*Bookmark*/
+
+.save{
+    font-size:22px;
+    color:#888;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.save:hover{
+    color:#667eea;
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:8px;
+    padding:8px 18px;
+
+}
+
+.btn-primary{
+    background:#5563c1;
+    border: none;
+}
+
+.btn-primary:hover{
+    border:1px solid #5563c1;
+    color:#5563c1;
+    background:white;
+}
+
+.job-btn{
+    display:flex;
+    gap:10px;
+}
+
+.btn-view{
+
+    border:1px solid #5563c1;
+    color:#5563c1;
+    background:white;
+
+}
+
+.btn-view:hover{
+
+    background:#5563c1;
+    color:white;
+    border-color:#5563c1;
+
+}
+.btn-apply{
+    background:#5563c1;
+    color:#fff;
+    border:2px solid #5563c1;
+    /* transition:.3s; */
+}
+
+.btn-apply:hover{
+    border:1px solid #5563c1;
+    color:#5563c1;
+    background:white;
+}
+/* Heading */
+
+
+h3{
+    color:#333;
+    font-weight:700;
+}
+
+
+/* Divider */
+
+
+hr{
+    margin:20px 0;
+    opacity:.15;
+}
+
+
+/* Responsive */
+
+
+@media(max-width:768px){
+
+    .job-card{
+        padding:18px;
+    }
+
+    .logo{
+        width:50px;
+        height:50px;
+        font-size:20px;
+    }
+
+    .job-title{
+        font-size:18px;
+    }
+
+    .job-meta{
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .d-flex.justify-content-between.align-items-center{
+        flex-direction:column;
+        align-items:flex-start !important;
+        gap:15px;
+    }
+
+    .btn{
+        width:100%;
+        margin-bottom:8px;
+    }
+
+}
+
+.footer{
+    margin-left:0px;
+    background:#fff;
+    border-top:1px solid #e9ecef;
+    padding:0;
+    transition:.3s;
+}
+

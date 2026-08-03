@@ -1,0 +1,73 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/resume_feedback.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="feedback-container">
+
+
+<h3>
+Resume Feedback
+</h3>
+
+
+{% for resume in resumes %}
+
+
+<div class="feedback-card">
+
+
+<div class="resume-title">
+
+{{resume.resume_name}}
+
+</div>
+
+
+<div class="feedback-text">
+
+{{resume.mentor_feedback}}
+
+</div>
+
+
+<div class="feedback-date">
+
+{{resume.feedback_date}}
+
+</div>
+
+<br>
+
+    <a href="{% url 'feedback_view_resume' resume.id %}"
+       class="btn btn-primary btn-sm">
+        View Resume
+    </a>
+
+</div>
+
+
+{% empty %}
+
+
+<div class="empty-feedback">
+
+No mentor feedback available yet.
+
+</div>
+
+
+{% endfor %}
+
+
+
+
+</div>
+
+
+{% endblock %}

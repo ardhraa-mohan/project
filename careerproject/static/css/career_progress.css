@@ -1,0 +1,414 @@
+body{
+    background-color:#f4f4f4;
+    font-family:Arial, sans-serif;
+}
+
+
+/* =========================
+   Page Header
+========================= */
+
+.container h2{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+.text-muted{
+
+    color:#777 !important;
+
+}
+
+
+
+/* =========================
+   Buttons
+========================= */
+
+.btn-primary{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-primary:hover{
+
+    background-color:#5566d8;
+
+    border-color:#5566d8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* =========================
+   Cards
+========================= */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+    transition:0.3s ease;
+
+}
+
+
+.card:hover{
+
+    box-shadow:0 10px 25px rgba(102,126,234,0.3);
+
+}
+
+
+.card-body{
+
+    padding:25px;
+
+}
+
+
+
+/* =========================
+   Progress Bar
+========================= */
+
+.progress{
+
+    height:12px;
+
+    border-radius:20px;
+
+    background:#e9ecef;
+
+}
+
+
+.progress-bar{
+
+    background-color:#667eea;
+
+    border-radius:20px;
+
+}
+
+
+
+/* =========================
+   Task Content
+========================= */
+
+.card h5{
+
+    color:#333;
+
+    font-weight:bold;
+
+}
+
+
+.text-decoration-line-through{
+
+    color:#888 !important;
+
+}
+
+
+
+/* =========================
+   Badges
+========================= */
+
+.bg-primary{
+
+    background-color:#667eea !important;
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+
+.bg-warning{
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* =========================
+   Action Buttons
+========================= */
+
+.btn-outline-primary{
+
+    border:2px solid #667eea;
+
+    color:#667eea;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+
+.btn-outline-primary:hover{
+
+    background-color:#667eea;
+
+    color:white;
+
+}
+
+
+
+.btn-outline-danger{
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* =========================
+   Icons
+========================= */
+
+.bi-check-circle-fill{
+
+    color:#28a745;
+
+}
+
+
+.bi-circle{
+
+    color:#888;
+
+}
+
+
+
+/* =========================
+   Tablet Responsive
+========================= */
+
+@media(max-width:992px){
+
+
+    .container{
+
+        padding:20px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+
+    .btn-primary{
+
+        padding:9px 20px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    /* Header */
+
+    .d-flex.justify-content-between{
+
+        flex-direction:column;
+
+        align-items:flex-start !important;
+
+    }
+
+
+    .d-flex.justify-content-between .btn-primary{
+
+        width:100%;
+
+        margin-top:15px;
+
+    }
+
+
+
+    /* Task Card */
+
+    .row{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+    .col-md-1,
+    .col-md-7,
+    .col-md-4{
+
+        width:100%;
+
+        text-align:center !important;
+
+        margin-bottom:15px;
+
+    }
+
+
+
+    /* Buttons */
+
+    .btn-outline-primary,
+    .btn-outline-danger{
+
+        width:100%;
+
+        margin-bottom:10px;
+
+    }
+
+
+
+    .card-body{
+
+        padding:20px 15px;
+
+    }
+
+
+    .card h5{
+
+        font-size:18px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media(max-width:480px){
+
+
+    .container h2{
+
+        font-size:22px;
+
+    }
+
+
+    .container p{
+
+        font-size:14px;
+
+    }
+
+
+    .card{
+
+        border-radius:12px;
+
+    }
+
+
+    .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .badge{
+
+        display:inline-block;
+
+        margin:3px;
+
+        font-size:12px;
+
+    }
+
+
+    .bi-check-circle-fill,
+    .bi-circle{
+
+        font-size:30px !important;
+
+    }
+
+
+    .progress{
+
+        height:10px;
+
+    }
+
+
+}

@@ -1,0 +1,66 @@
+{% extends "company_module/recruitment/company_base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/shortlisted_candidates.css' %}">
+<div class="card shadow-sm rounded-4">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Applied Job</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Applied Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for application in applications %}
+                    <tr>
+
+                        <td>{{ application.student.full_name }}</td>
+
+                        <td>{{ application.job.job_title }}</td>
+
+                        <td>{{ application.student.user.email }}</td>
+
+                        <td>
+                            {% if application.status == "Selected" %}
+                                <span class="badge bg-success">{{ application.status }}</span>
+                            {% else %}
+                                <span class="badge bg-warning text-dark">{{ application.status }}</span>
+                            {% endif %}
+                        </td>
+
+                        <td>{{ application.applied_at|date:"d M Y" }}</td>
+
+                        <td>
+                            <a href="{% url 'view_application' application.id %}"
+                               class="btn btn-primary btn-sm">
+                                View Profile
+                            </a>
+                        </td>
+
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            No shortlisted candidates found.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{%endblock%}

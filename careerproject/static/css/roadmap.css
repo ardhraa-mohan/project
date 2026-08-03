@@ -1,0 +1,189 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f7fc;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Page */
+
+.roadmap-container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* Card */
+
+.roadmap-card{
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+/* Header */
+
+.roadmap-header{
+    background:#667eea;
+    color:#fff;
+    padding:25px;
+}
+
+.roadmap-header h2{
+    margin-bottom:8px;
+    font-size:30px;
+}
+
+.roadmap-header p{
+    margin:0;
+    opacity:.9;
+    font-size:17px;
+}
+
+/* Body */
+
+.roadmap-body{
+    padding:30px;
+}
+
+/* AI Roadmap */
+
+.ai-roadmap{
+    white-space:pre-line;
+    line-height:1.9;
+    font-size:17px;
+    color:#333;
+}
+
+/* Buttons */
+
+.btn-back{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    background:#667eea;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 24px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+.btn-back:hover{
+
+    background:#5548e8;
+
+    color:white;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .roadmap-container{
+
+        padding:10px;
+
+    }
+
+    .roadmap-header{
+
+        padding:20px;
+
+    }
+
+    .roadmap-header h2{
+
+        font-size:24px;
+
+    }
+
+    .roadmap-body{
+
+        padding:20px;
+
+    }
+
+}
+
+/* No Career Selected */
+
+.no-career{
+
+    max-width:700px;
+
+    margin:80px auto;
+
+    background:#fff;
+
+    padding:50px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.no-career h2{
+
+    color:#6c63ff;
+
+    margin-bottom:20px;
+
+    font-size:32px;
+
+}
+
+.no-career p{
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.no-career a{
+
+    display:inline-block;
+
+    background:#6c63ff;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+.no-career a:hover{
+
+    background:#667eea;
+
+    color:#fff;
+
+}

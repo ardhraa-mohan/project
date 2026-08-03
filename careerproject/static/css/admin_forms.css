@@ -1,0 +1,43 @@
+.container{
+    max-width:850px;
+}
+
+.card{
+    border-radius:15px;
+}
+
+.card-header{
+    border-radius:15px 15px 0 0 !important;
+}
+
+label{
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px 14px;
+    border:1px solid #ced4da;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#6c63ff;
+    box-shadow:0 0 5px rgba(108,99,255,.3);
+}
+
+.btn-primary{
+    background:#6c63ff;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#574bdb;
+}

@@ -1,0 +1,162 @@
+{% extends 'common/base_private.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/mock_interview.css' %}">
+
+<div class="container">
+
+    <div class="mock-card">
+
+        <h2 class="page-title">
+            🤖 AI Mock Interview
+        </h2>
+
+        <p class="page-subtitle">
+            Practice interviews based on your selected career and improve your confidence.
+        </p>
+
+        {% if career %}
+
+        <div class="info-box">
+
+            <h5>Current Career</h5>
+
+            <p>{{ career.career_name }}</p>
+
+        </div>
+
+        <form method="post" action="{% url 'start_mock_interview' %}">
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Difficulty Level
+                </label>
+
+                <select name="difficulty" class="form-select">
+
+                    <option>Easy</option>
+
+                    <option selected>Medium</option>
+
+                    <option>Hard</option>
+
+                </select>
+
+            </div>
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Number of Questions
+                </label>
+
+                <select name="questions" class="form-select">
+
+                    <option>5</option>
+
+                    <option selected>10</option>
+
+                    <option>15</option>
+
+                </select>
+
+            </div>
+
+            <button type="submit" class="start-btn">
+
+                <i class="bi bi-play-fill"></i>
+
+                Start Interview
+
+            </button>
+
+        </form>
+        <div class="text-center mt-3">
+
+    <a href="{% url 'interview_history' %}"
+       class="btn btn-outline-primary">
+
+        View Previous Interviews
+
+    </a>
+
+</div>
+
+<div class="text-center mt-3">
+
+    <a href="{% url 'student_interview_feedback' %}"
+       class="btn btn-outline-success">
+
+        <i class="bi bi-chat-left-text"></i>
+
+        View Mentor Feedback
+
+    </a>
+
+</div>
+
+        <div class="feature-list">
+
+            <div class="feature-item">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                AI-generated interview questions
+
+            </div>
+
+            <div class="feature-item">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                Personalized based on your career
+
+            </div>
+
+            <div class="feature-item">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                Instant AI evaluation
+
+            </div>
+
+            <div class="feature-item">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                Detailed performance report
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <div class="warning-box">
+
+            <h5>No Career Selected</h5>
+
+            <p>
+                Please complete your Career Assessment and select a career before starting a mock interview.
+            </p>
+
+            <a href="{% url 'career_assessment' %}" class="btn btn-warning mt-2">
+                Go to Career Assessment
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

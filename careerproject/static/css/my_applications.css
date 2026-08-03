@@ -1,0 +1,379 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Card */
+
+.application-card{
+
+    background:white;
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    transition:0.3s ease;
+
+}
+
+
+.application-card:hover{
+
+    box-shadow:0 10px 25px rgba(102,126,234,0.3);
+
+}
+
+
+
+/* Title */
+
+.application-title{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* Table */
+
+.application-table{
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+
+.application-table thead{
+
+    background:#667eea !important;
+
+    color:white;
+
+}
+
+
+.application-table th{
+
+    padding:15px;
+
+    font-weight:bold;
+
+}
+
+
+.application-table td{
+
+    padding:15px;
+
+    vertical-align:middle;
+
+}
+
+
+
+/* Table Hover */
+
+.application-table tbody tr{
+
+    transition:0.3s ease;
+
+}
+
+
+.application-table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+
+
+/* Status Badges */
+
+.status-applied{
+
+    background:#667eea;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+.badge{
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+
+/* Resume Button */
+
+.btn-outline-primary{
+
+    border:2px solid #667eea;
+
+    color:#667eea;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-outline-primary:hover{
+
+    background:#667eea;
+
+    color:white;
+
+}
+
+
+
+/* Browse Jobs Button */
+
+.btn-primary{
+
+    background:#667eea;
+
+    border-color:#667eea;
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+}
+
+
+.btn-primary:hover{
+
+    background:#5566d8;
+
+    border-color:#5566d8;
+
+}
+
+
+
+/* Empty Card */
+
+.empty-card{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+
+.empty-card h4{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+}
+
+
+
+/* =========================
+      Tablet Responsive
+========================= */
+
+@media(max-width:992px){
+
+
+    .application-card{
+
+        padding:25px;
+
+    }
+
+
+    .application-table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+      Mobile Responsive
+========================= */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        margin-top:30px !important;
+
+        padding:0 15px;
+
+    }
+
+
+    .application-card{
+
+        padding:20px 15px;
+
+        border-radius:12px;
+
+    }
+
+
+    .application-title{
+
+        text-align:center;
+
+        font-size:24px;
+
+    }
+
+
+
+    /* Horizontal Scroll Table */
+
+    .application-table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+
+    .application-table th,
+    .application-table td{
+
+        padding:12px;
+
+    }
+
+
+
+    .btn-outline-primary{
+
+        padding:7px 15px;
+
+        font-size:13px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+      Small Mobile
+========================= */
+
+@media(max-width:480px){
+
+
+    .application-title{
+
+        font-size:21px;
+
+    }
+
+
+    .application-card{
+
+        padding:15px 10px;
+
+    }
+
+
+    .empty-card{
+
+        padding:35px 15px;
+
+    }
+
+
+    .empty-card i{
+
+        font-size:45px !important;
+
+    }
+
+
+    .badge,
+    .status-applied{
+
+        font-size:12px;
+
+        padding:6px 10px;
+
+    }
+
+
+}
+
+.application-header{
+
+    background-color:#667eea;
+
+    color:white;
+
+}
+
+
+.application-header th{
+
+    background-color:#667eea !important;
+
+    color:white !important;
+
+    padding:15px;
+
+    font-weight:bold;
+
+    border:none;
+
+}

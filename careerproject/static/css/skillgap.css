@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f7fc;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.skillgap-container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.skillgap-card{
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+.skillgap-header{
+    background:#667eea;
+    color:#fff;
+    padding:25px;
+}
+
+.skillgap-header h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.skillgap-header p{
+    font-size:17px;
+    opacity:.9;
+}
+
+.skillgap-body{
+    padding:30px;
+}
+
+.ai-report{
+    white-space:pre-line;
+    line-height:1.9;
+    font-size:17px;
+    color:#333;
+}
+
+.btn-back{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 24px;
+    background:#667eea;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn-back:hover{
+    background:#574ee5;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    .skillgap-container{
+        padding:10px;
+    }
+
+    .skillgap-header{
+        padding:20px;
+    }
+
+    .skillgap-header h2{
+        font-size:24px;
+    }
+
+    .skillgap-body{
+        padding:20px;
+    }
+
+    .ai-report{
+        font-size:16px;
+    }
+
+}

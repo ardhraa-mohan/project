@@ -1,0 +1,120 @@
+{% extends 'mentor_module/mentor_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h4>Mock Interview Feedback</h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                <strong>Student:</strong>
+                {{ interview.student.user.full_name }}
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                {{ interview.student.user.email }}
+            </p>
+
+            <p>
+                <strong>Career:</strong>
+                {{ interview.career.career_name }}
+            </p>
+
+            <p>
+                <strong>Difficulty:</strong>
+                {{ interview.difficulty }}
+            </p>
+
+            <hr>
+
+            <h5>Interview Scores</h5>
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>Overall Score</th>
+                    <td>{{ interview.overall_score }}</td>
+                </tr>
+
+                <tr>
+                    <th>Technical Score</th>
+                    <td>{{ interview.technical_score }}</td>
+                </tr>
+
+                <tr>
+                    <th>Communication Score</th>
+                    <td>{{ interview.communication_score }}</td>
+                </tr>
+
+                <tr>
+                    <th>Confidence Score</th>
+                    <td>{{ interview.confidence_score }}</td>
+                </tr>
+
+            </table>
+
+            <hr>
+
+            <h5>AI Report</h5>
+
+            <div class="alert alert-light">
+
+                {{ interview.ai_report }}
+
+            </div>
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Mentor Feedback
+
+                    </label>
+
+                    <textarea
+                        name="feedback"
+                        class="form-control"
+                        rows="8"
+                        placeholder="Write your feedback here..."
+                        required>{{ interview.mentor_feedback|default_if_none:'' }}</textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-success">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Save Feedback
+
+                </button>
+
+                <a href="{% url 'view_interview_report' interview.id %}"
+                   class="btn btn-secondary">
+
+                    Back
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,145 @@
+body{
+    background-color:#f5f7fb;
+    font-family:Arial, sans-serif;
+}
+
+/* Heading */
+
+h2{
+    color:#667eea;
+    font-weight:bold;
+}
+
+h3{
+    color:#667eea;
+    font-weight:bold;
+}
+
+/* Card */
+
+.card{
+    border:2px solid #667eea;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+/* Labels */
+
+.form-label{
+    font-weight:bold;
+    color:#333;
+}
+
+/* Inputs */
+
+.form-control{
+    border-radius:8px;
+    border:1px solid #ccc;
+    padding:10px;
+    transition:.3s;
+}
+
+.form-control:hover{
+    border-color:#667eea;
+}
+
+.form-control:focus{
+    border-color:#667eea;
+    box-shadow:0 0 6px rgba(102,126,234,.3);
+}
+
+/* Textarea */
+
+textarea{
+    resize:none;
+}
+
+/* Buttons */
+
+.btn-primary{
+    background:#667eea;
+    border:2px solid #667eea;
+    border-radius:8px;
+    font-weight:bold;
+    padding:10px 30px;
+}
+
+.btn-primary:hover{
+    background:white;
+    color:#667eea;
+    border:2px solid #667eea;
+}
+
+.btn-warning{
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn-danger{
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn-success{
+    border-radius:8px;
+    font-weight:bold;
+    padding:10px 25px;
+}
+
+/* Project Card */
+
+.card-body h5{
+    margin-bottom:15px;
+}
+
+.card-body p{
+    margin-bottom:10px;
+    color:#555;
+}
+
+.card-body strong{
+    color:#333;
+}
+
+/* Links */
+
+a{
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* Alert */
+
+.alert{
+    border-radius:10px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .card-body{
+        padding:20px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    h3{
+        font-size:22px;
+    }
+
+    .btn{
+        width:100%;
+        margin-top:10px;
+    }
+}

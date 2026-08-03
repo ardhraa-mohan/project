@@ -1,0 +1,132 @@
+/* Assign Students Page */
+
+.assign-card{
+    border:none;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.assign-card .card-header{
+    background:#667eea;
+    color:white;
+    padding:15px 20px;
+    font-weight:600;
+}
+
+
+.assign-card .card-body{
+    padding:25px;
+}
+
+
+.mentor-name{
+    font-size:20px;
+    font-weight:600;
+    color:#333;
+}
+
+
+.table{
+    border-radius:12px;
+    overflow:hidden;
+}
+
+
+.table th{
+    background:#f8f9fa;
+    color:#555;
+    font-weight:600;
+}
+
+
+.table td,
+.table th{
+    padding:14px;
+    vertical-align:middle;
+}
+
+
+input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    cursor:pointer;
+}
+
+
+.save-btn{
+    background:#667eea;
+    border:none;
+    padding:10px 25px;
+    border-radius:25px;
+    color:white;
+    font-weight:600;
+}
+
+
+.save-btn:hover{
+    background:#5563d8;
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .container{
+        padding:10px;
+    }
+
+
+    .assign-card .card-body{
+        padding:15px;
+    }
+
+
+    .mentor-name{
+        font-size:18px;
+    }
+
+
+    .table-responsive{
+        overflow-x:auto;
+    }
+
+
+    .table{
+        min-width:600px;
+        font-size:14px;
+    }
+
+
+    .table td,
+    .table th{
+        padding:10px;
+    }
+
+
+    .save-btn{
+        width:100%;
+        margin-top:10px;
+    }
+
+}
+
+
+@media(max-width:576px){
+
+    .card-header h4{
+        font-size:18px;
+    }
+
+
+    .mentor-name{
+        font-size:16px;
+    }
+
+
+    input[type="checkbox"]{
+        width:16px;
+        height:16px;
+    }
+
+}

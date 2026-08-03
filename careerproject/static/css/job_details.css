@@ -1,0 +1,75 @@
+body{
+    background:#f5f7fb;
+    font-family:Arial,sans-serif;
+}
+
+.job-details-card{
+
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.job-title{
+
+    font-size:32px;
+    font-weight:700;
+    color:#333;
+
+}
+
+.company{
+
+    color:#666;
+    font-size:17px;
+
+}
+
+.company i{
+
+    color:#667eea;
+    margin-right:5px;
+
+}
+
+h5{
+
+    font-weight:600;
+    color:#444;
+    margin-bottom:15px;
+
+}
+
+.skill{
+
+    display:inline-block;
+    background:#eef2ff;
+    color:#667eea;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
+
+}
+
+.btn{
+
+    border-radius:8px;
+    min-width:140px;
+
+}
+
+.btn-apply{
+    
+    background:#5563c1;
+    color:#fff;
+    border:2px solid #5563c1;
+    /* transition:.3s; */
+}
+
+.btn-apply:hover{
+    border:1px solid #5563c1;
+    color:#5563c1;
+    background:white;
+}

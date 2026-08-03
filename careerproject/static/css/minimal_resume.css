@@ -1,0 +1,223 @@
+/* ==========================================
+            MINIMAL RESUME TEMPLATE
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#222;
+    line-height:1.7;
+}
+
+.resume{
+    width:210mm;
+    min-height:297mm;
+    background:#fff;
+    margin:30px auto;
+    padding:40px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    text-align:center;
+    border-bottom:2px solid #000;
+    padding-bottom:18px;
+}
+
+.header h1{
+    font-size:32px;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.header p{
+    margin-top:5px;
+    font-size:15px;
+}
+
+.header a{
+    color:#000;
+    text-decoration:none;
+}
+
+.header a:hover{
+    text-decoration:underline;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    margin-top:28px;
+}
+
+section h2{
+    font-size:18px;
+    border-bottom:1px solid #000;
+    padding-bottom:6px;
+    margin-bottom:15px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+    text-align:justify;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* ================= ITEMS ================= */
+
+.item{
+    margin-bottom:20px;
+}
+
+.item strong{
+    display:block;
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.item span{
+    float:right;
+    color:#555;
+    font-size:14px;
+}
+
+.item p{
+    margin-top:5px;
+    line-height:1.6;
+    font-size:15px;
+}
+
+/* ================= SKILLS ================= */
+
+.sub-heading{
+    font-weight:bold;
+    margin-top:15px;
+    margin-bottom:8px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    list-style:none;
+    margin-top:10px;
+}
+
+.skills li{
+    border:1px solid #000;
+    padding:6px 12px;
+    border-radius:4px;
+    font-size:14px;
+}
+
+/* ================= PROJECT LINKS ================= */
+
+.project-links{
+    margin-top:8px;
+}
+
+.project-links a{
+    margin-right:15px;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.project-links a:hover{
+    text-decoration:underline;
+}
+
+/* ================= LIST ================= */
+
+ul{
+    margin-left:20px;
+    margin-top:8px;
+}
+
+ul li{
+    margin-bottom:6px;
+}
+
+/* ================= HORIZONTAL LINE ================= */
+
+hr{
+    border:none;
+    border-top:1px solid #ddd;
+    margin:25px 0;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+body{
+    background:white;
+}
+
+.resume{
+    width:100%;
+    margin:0;
+    padding:20px;
+    box-shadow:none;
+}
+
+a{
+    color:black;
+    text-decoration:none;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.resume{
+    width:100%;
+    margin:0;
+    padding:20px;
+}
+
+.header h1{
+    font-size:26px;
+}
+
+section h2{
+    font-size:17px;
+}
+
+.item span{
+    float:none;
+    display:block;
+    margin-top:3px;
+}
+
+.skills{
+    gap:8px;
+}
+
+.skills li{
+    font-size:13px;
+}
+
+}
+
+@media print{
+
+    .no-print{
+        display:none;
+    }
+
+}

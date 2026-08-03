@@ -1,0 +1,290 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Card */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* Header */
+
+.card-header.bg-primary{
+
+    background-color:#ffffff !important;
+
+    padding:18px 20px;
+
+}
+
+
+.card-header h4{
+
+    margin:0;
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Card Body */
+
+.card-body{
+
+    padding:25px;
+
+}
+
+
+
+/* Table */
+
+.table{
+
+    margin-bottom:0;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+
+.table thead th{
+
+    background-color:#667eea;
+
+    color:white;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    padding:15px;
+
+    border:none;
+
+}
+
+
+.table tbody td{
+
+    padding:14px;
+
+    vertical-align:middle;
+
+    text-align:center;
+
+}
+
+
+
+/* Table Hover */
+
+.table tbody tr{
+
+    transition:0.3s ease;
+
+}
+
+
+.table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+
+
+/* Button */
+
+.btn-primary{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+    padding:8px 18px;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-primary:hover{
+
+    background-color:#5566d8;
+
+    border-color:#5566d8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Empty Row */
+
+.text-center{
+
+    color:#777;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ==========================
+      Tablet Responsive
+========================== */
+
+@media(max-width:992px){
+
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+
+    .table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+      Mobile Responsive
+========================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+    .card{
+
+        border-radius:12px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:20px;
+
+    }
+
+
+    /* Horizontal scrolling table */
+
+    .table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+
+    .table th,
+    .table td{
+
+        padding:12px;
+
+    }
+
+
+    .btn-primary{
+
+        padding:7px 15px;
+
+        font-size:13px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+      Small Mobile
+========================== */
+
+@media(max-width:480px){
+
+
+    .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .card-header{
+
+        padding:15px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:18px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+    .btn-primary{
+
+        width:100%;
+
+    }
+
+
+}

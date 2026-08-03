@@ -1,0 +1,93 @@
+body{
+    background:#f5f7fb;
+    font-family:Arial, sans-serif;
+}
+
+/* Card */
+
+.card{
+    border:2px solid #667eea;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.card-header{
+    background:#667eea !important;
+    color:white;
+    padding:18px;
+    text-align:center;
+}
+
+.card-header h3{
+    margin:0;
+    font-weight:bold;
+}
+
+/* Card Body */
+
+.card-body{
+    padding:30px;
+}
+
+/* Job Details */
+
+.card-body p{
+    font-size:16px;
+    margin-bottom:18px;
+    color:#444;
+    line-height:1.7;
+}
+
+.card-body strong{
+    color:#667eea;
+}
+
+/* Description & Skills */
+
+.card-body p:last-of-type{
+    margin-bottom:25px;
+}
+
+/* Back Button */
+
+.btn-secondary{
+    background:#667eea;
+    border:none;
+    padding:10px 25px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn-secondary:hover{
+    background:#5563c1;
+    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* Card Hover */
+
+.card:hover{
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .card-body{
+        padding:20px;
+    }
+
+    .card-body p{
+        font-size:15px;
+    }
+
+    .card-header h3{
+        font-size:22px;
+    }
+
+    .btn-secondary{
+        width:100%;
+    }
+
+}

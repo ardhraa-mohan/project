@@ -1,0 +1,85 @@
+{% extends 'company_module/recruitment/company_base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/post_job.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow">
+
+                <div class="head text-center">
+
+                    <h3>Edit Job</h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <div class="text-center mt-4">
+
+                            <button type="submit" class="btn btn-outline-primary">
+
+                                Update Job
+
+                            </button>
+
+                            <a href="{% url 'manage_jobs' %}" class="btn btn-outline-secondary">
+
+                                Cancel
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if messages %}
+    {% for message in messages %}
+
+    <script>
+
+        Swal.fire({
+
+            icon: "{% if message.tags == 'success' %}success{% else %}error{% endif %}",
+
+            title: "{{ message }}",
+
+            showConfirmButton: false,
+
+            timer: 1800
+
+        });
+
+    </script>
+
+    {% endfor %}
+{% endif %}

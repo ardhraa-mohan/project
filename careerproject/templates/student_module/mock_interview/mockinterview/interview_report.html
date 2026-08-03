@@ -1,0 +1,179 @@
+{% extends 'common/base_private.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/interview_report.css' %}">
+
+<div class="container">
+
+    <div class="report-card">
+
+        <span class="finish-badge">
+
+            ✓ Interview Completed
+
+        </span>
+
+        <h2 class="report-title">
+
+            AI Mock Interview Report
+
+        </h2>
+
+        <p class="report-subtitle">
+
+            Review your answers and AI evaluation below.
+
+        </p>
+
+        <div class="row text-center mb-4">
+
+    <div class="col-md-3">
+
+        <div class="question-card">
+
+            <h3 class="text-primary">
+
+                {{ interview.overall_score }}%
+
+            </h3>
+
+            <p class="mb-0">Overall</p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="question-card">
+
+            <h3 class="text-primary">
+
+                {{ interview.technical_score }}%
+
+            </h3>
+
+            <p class="mb-0">Technical</p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="question-card">
+
+            <h3 class="text-primary">
+
+                {{ interview.communication_score }}%
+
+            </h3>
+
+            <p class="mb-0">Communication</p>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="question-card">
+
+            <h3 class="text-primary">
+
+                {{ interview.confidence_score }}%
+
+            </h3>
+
+            <p class="mb-0">Confidence</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- AI Evaluation -->
+
+        <div class="question-card mb-4">
+
+            <h4>🤖 AI Evaluation</h4>
+
+            <hr>
+
+            {% if interview.ai_report %}
+
+                {{ interview.ai_report|linebreaks }}
+
+            {% else %}
+
+                <p>AI evaluation is not available.</p>
+
+            {% endif %}
+
+        </div>
+
+        <!-- Student Answers -->
+
+        {% for question in questions %}
+
+        <div class="question-card">
+
+            <div class="question-number">
+
+                Question {{ question.order }}
+
+            </div>
+
+            <div class="question-text">
+
+                {{ question.question }}
+
+            </div>
+
+            <div class="answer-title">
+
+                Your Answer
+
+            </div>
+
+            <div class="answer-box">
+
+                {% if question.answer %}
+
+                    {{ question.answer }}
+
+                {% else %}
+
+                    <span class="no-answer">
+
+                        No answer submitted.
+
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="text-center mt-4">
+
+            <a href="{% url 'mock_interview' %}" class="back-btn">
+
+                Back to Mock Interview
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

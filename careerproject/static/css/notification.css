@@ -1,0 +1,15 @@
+.notification-container{
+    max-width:800px;
+    margin:auto;
+}
+
+.notification-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.notification-header h2{
+    font-weight:bold;
+}

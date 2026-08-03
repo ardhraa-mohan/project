@@ -1,0 +1,52 @@
+{% extends "common/base_private.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/learning.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+            <h2>📚 Learning Platform</h2>
+        </div>
+
+        <div class="card-body">
+
+            <h4>Career Goal</h4>
+
+            {% if career %}
+                <h5 class="text-primary">{{ career.career_name }}</h5>
+            {% else %}
+                <p>No career selected.</p>
+            {% endif %}
+
+            <hr>
+
+            <h2 class="mb-4">Recommended Courses</h2>
+
+{% for course in courses %}
+
+<div class="card course-card shadow-sm">
+
+    <div class="card-body">
+
+        <pre class="course-text">{{ course }}</pre>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+body{
+    background:#f4f7fb;
+    font-family:Arial,sans-serif;
+}
+
+/* Main Card */
+
+.no-mentor-card{
+    max-width:650px;
+    margin:70px auto;
+    background:#fff;
+    border:2px solid #667eea;
+    border-radius:18px;
+    padding:45px 35px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+/* Icon */
+
+.no-mentor-icon{
+    width:90px;
+    height:90px;
+    margin-bottom:20px;
+}
+
+/* Heading */
+
+.no-mentor-card h2{
+    color:#667eea;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+/* Description */
+
+.no-mentor-card p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+/* Button */
+
+.btn-primary{
+    background:#667eea;
+    border:none;
+    border-radius:8px;
+    padding:10px 30px;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    background:#5569d8;
+}
+
+/* Card Animation */
+
+.no-mentor-card:hover{
+    transform:translateY(-5px);
+    transition:.3s;
+    box-shadow:0 12px 30px rgba(102,126,234,.15);
+}

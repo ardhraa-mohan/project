@@ -1,0 +1,279 @@
+/* ==========================================
+        PROFESSIONAL RESUME TEMPLATE
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f6f9;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333;
+    line-height:1.7;
+}
+
+.resume{
+    width:210mm;
+    min-height:297mm;
+    background:#fff;
+    margin:30px auto;
+    padding:40px;
+    box-shadow:0 0 20px rgba(0,0,0,.12);
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    text-align:center;
+    border-bottom:3px solid #4f46e5;
+    padding-bottom:20px;
+}
+
+.header h1{
+    font-size:34px;
+    color:#222;
+    margin-bottom:8px;
+}
+
+.job-role{
+    color:#4f46e5;
+    font-size:19px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.contact{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:14px;
+    color:#666;
+}
+
+.links{
+    margin-top:12px;
+}
+
+.links p{
+    margin-top:4px;
+}
+
+.links a{
+    color:#4f46e5;
+    text-decoration:none;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+    margin-top:28px;
+}
+
+.section h2{
+    color:#4f46e5;
+    font-size:20px;
+    text-transform:uppercase;
+    border-bottom:2px solid #4f46e5;
+    padding-bottom:6px;
+    margin-bottom:16px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+    text-align:justify;
+    font-size:15px;
+}
+
+/* ================= ITEMS ================= */
+
+.item{
+    margin-bottom:18px;
+}
+
+.title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.title h3{
+    font-size:17px;
+    color:#222;
+}
+
+.title span{
+    color:#666;
+    font-size:14px;
+}
+
+.item p{
+    margin-top:5px;
+    font-size:15px;
+}
+
+/* ================= PROJECTS ================= */
+
+.project-links{
+    margin-top:8px;
+}
+
+.project-links a{
+    display:inline-block;
+    margin-right:15px;
+    color:#4f46e5;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.project-links a:hover{
+    text-decoration:underline;
+}
+
+/* ================= SKILLS ================= */
+
+.sub-heading{
+    font-size:16px;
+    color:#444;
+    margin-top:15px;
+    margin-bottom:8px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    list-style:none;
+    margin-bottom:15px;
+}
+
+.skills li{
+    border:1px solid #4f46e5;
+    color:#4f46e5;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.company{
+    font-weight:bold;
+    color:#444;
+}
+
+.duration{
+    color:#777;
+    font-size:14px;
+}
+
+/* ================= GENERAL LIST ================= */
+
+ul{
+    margin-left:20px;
+}
+
+ul li{
+    margin-bottom:6px;
+}
+
+/* ================= LINKS ================= */
+
+a{
+    color:#4f46e5;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* ================= HORIZONTAL LINE ================= */
+
+hr{
+    margin:25px 0;
+    border:none;
+    border-top:1px solid #ddd;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+body{
+    background:white;
+}
+
+.resume{
+    width:100%;
+    margin:0;
+    padding:20px;
+    box-shadow:none;
+}
+
+a{
+    color:black;
+    text-decoration:none;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.resume{
+    width:100%;
+    margin:0;
+    padding:20px;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.job-role{
+    font-size:16px;
+}
+
+.contact{
+    flex-direction:column;
+    gap:5px;
+}
+
+.title{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.section h2{
+    font-size:18px;
+}
+
+.skills{
+    gap:8px;
+}
+
+.skills li{
+    font-size:13px;
+    padding:5px 12px;
+}
+
+}
+
+@media print{
+
+    .no-print{
+        display:none;
+    }
+
+}

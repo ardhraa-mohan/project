@@ -1,0 +1,222 @@
+body{
+    background:#f5f7fb;
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+/* Main Card */
+
+.card{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+
+/* Card Header */
+
+.card-header{
+    background:#fff;
+    padding:20px 25px;
+    border-bottom:1px solid #eee;
+    align-items:center;
+}
+
+
+.card-header h4{
+    margin:0;
+    color:#333;
+    font-weight:700;
+}
+
+
+/* Search */
+
+.card-header form{
+    width:260px;
+}
+
+
+.card-header input{
+    border-radius:12px;
+    border:1px solid #ddd;
+    padding:10px 15px;
+    transition:.3s;
+}
+
+
+.card-header input:focus{
+    border-color:#667eea;
+    box-shadow:0 0 0 3px rgba(102,126,234,.15);
+    outline:none;
+}
+
+
+/* Table */
+
+.table{
+    margin:0;
+}
+
+
+.table thead th{
+
+    background:#667eea;
+    color:white;
+    font-weight:600;
+    padding:14px;
+    border:none;
+}
+
+
+.table tbody td{
+
+    padding:14px;
+    vertical-align:middle;
+    color:#555;
+
+}
+
+
+.table tbody tr{
+
+    transition:.3s;
+
+}
+
+
+.table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+
+/* Assign Button */
+
+.btn-success{
+
+    background:#667eea;
+    border:none;
+    padding:8px 18px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+
+.btn-success:hover{
+
+    background:#5563d6;
+    transform:translateY(-2px);
+
+}
+
+
+/* Empty row */
+
+.table tbody td[colspan]{
+
+    text-align:center;
+    padding:30px;
+    color:#777;
+
+}
+
+
+@media(max-width:768px){
+
+    /* Navbar */
+
+    .navbar{
+        width:100%;
+        height:65px;
+        padding:0 15px;
+    }
+
+
+    .logo{
+        font-size:20px;
+    }
+
+
+    .logo span{
+        display:none;
+    }
+
+
+    /* Sidebar */
+
+    .sidebar{
+        left:-260px;
+        z-index:1050;
+    }
+
+
+    .sidebar.show{
+        left:0;
+    }
+
+
+    /* Content */
+
+    .content{
+        margin-left:0;
+        padding:15px;
+        width:100%;
+        overflow:hidden;
+    }
+
+
+    .container{
+        width:100%;
+        padding:0;
+    }
+
+
+    /* Card */
+
+    .card{
+        width:100%;
+        border-radius:15px;
+    }
+
+
+    /* Header */
+
+    .card-header{
+        flex-direction:column;
+        gap:15px;
+        align-items:flex-start !important;
+    }
+
+
+    .card-header form{
+        width:100%;
+    }
+
+
+    /* Table */
+
+    .table-responsive{
+        overflow-x:auto;
+    }
+
+
+    table{
+        min-width:700px;
+    }
+
+
+    /* Footer */
+
+    .footer{
+        margin-left:0;
+        width:100%;
+        text-align:center;
+        padding:15px;
+    }
+
+}

@@ -1,0 +1,291 @@
+body{
+
+    background:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Container Card */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+}
+
+
+
+.card-body{
+
+    padding:35px;
+
+}
+
+
+
+/* Student Name */
+
+.card h2{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* Information Boxes */
+
+.info-box{
+
+    background:#f8f9ff;
+
+    border-left:5px solid #667eea;
+
+    padding:15px 20px;
+
+    margin-bottom:15px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+
+
+.info-box strong{
+
+    color:#333;
+
+}
+
+
+.info-box span{
+
+    color:#666;
+
+}
+
+
+
+/* Resume Button */
+
+.resume-btn{
+
+    margin:25px 0;
+
+}
+
+
+
+.btn-info{
+
+    background:#667eea !important;
+
+    border-color:#667eea !important;
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn-info:hover{
+
+    background:#5566d8 !important;
+
+    border-color:#5566d8 !important;
+
+}
+
+
+
+/* Horizontal Line */
+
+hr{
+
+    border-color:#ddd;
+
+    margin:25px 0;
+
+}
+
+
+
+/* Form Label */
+
+label{
+
+    font-weight:bold;
+
+    color:#444;
+
+    margin-bottom:8px;
+
+}
+
+
+
+/* Select Box */
+
+.form-select{
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    padding:12px;
+
+}
+
+
+
+.form-select:focus{
+
+    border-color:#667eea;
+
+    box-shadow:0 0 8px rgba(102,126,234,.3);
+
+}
+
+
+
+/* Update Button */
+
+.btn-primary{
+
+    background:#667eea !important;
+
+    border-color:#667eea !important;
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn-primary:hover{
+
+    background:#5566d8 !important;
+
+    border-color:#5566d8 !important;
+
+}
+
+
+
+/* Back Button */
+
+.btn-outline-secondary{
+
+    border-radius:25px;
+
+    padding:9px 25px;
+
+}
+
+
+
+/* =====================
+       Tablet
+===================== */
+
+@media(max-width:768px){
+
+
+    .card-body{
+
+        padding:25px;
+
+    }
+
+
+    .card h2{
+
+        font-size:24px;
+
+        text-align:center;
+
+    }
+
+
+    .info-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+}
+
+
+
+/* =====================
+       Mobile
+===================== */
+
+@media(max-width:480px){
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+
+    .card h2{
+
+        font-size:21px;
+
+    }
+
+
+    .btn-primary,
+    .btn-info,
+    .btn-outline-secondary{
+
+        width:100%;
+
+        margin-top:10px;
+
+    }
+
+
+}

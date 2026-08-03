@@ -1,0 +1,325 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Container */
+
+.container{
+
+    padding-bottom:40px;
+
+}
+
+
+
+/* Header Section */
+
+.d-flex h2{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Search Box */
+
+.form-control{
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    width:250px;
+
+    transition:0.3s ease;
+
+}
+
+
+.form-control:focus{
+
+    border-color:#667eea;
+
+    box-shadow:0 0 6px rgba(102,126,234,0.4);
+
+}
+
+
+.form-control:hover{
+
+    border-color:#667eea;
+
+}
+
+
+
+/* Main Card */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    overflow:hidden;
+
+}
+
+
+
+/* Card Body */
+
+.card-body{
+
+    padding:25px;
+
+}
+
+
+
+/* Table */
+
+.table{
+
+    margin-bottom:0;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+
+.table thead th{
+
+    background-color:#667eea;
+
+    color:white;
+
+    font-weight:bold;
+
+    padding:15px;
+
+    text-align:center;
+
+    border:none;
+
+}
+
+
+.table tbody td{
+
+    padding:15px;
+
+    text-align:center;
+
+    vertical-align:middle;
+
+}
+
+
+
+/* Table Hover */
+
+.table tbody tr{
+
+    transition:0.3s ease;
+
+}
+
+
+.table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+
+
+/* View Resume Button */
+
+.btn-primary{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+    border-radius:20px;
+
+    padding:8px 18px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-primary:hover{
+
+    background-color:#5566d8;
+
+    border-color:#5566d8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Empty Row */
+
+.text-center{
+
+    color:#777;
+
+}
+
+
+
+/* ==========================
+        Tablet
+========================== */
+
+@media(max-width:992px){
+
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+
+    .table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+        Mobile
+========================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+    .d-flex.justify-content-between{
+
+        flex-direction:column;
+
+        align-items:flex-start !important;
+
+        gap:15px;
+
+    }
+
+
+    .d-flex h2{
+
+        font-size:24px;
+
+    }
+
+
+    .form-control{
+
+        width:100%;
+
+    }
+
+
+
+    /* Responsive Table */
+
+    .table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+
+    .table th,
+    .table td{
+
+        padding:12px;
+
+    }
+
+
+    .btn-primary{
+
+        font-size:13px;
+
+        padding:7px 15px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+        Small Mobile
+========================== */
+
+@media(max-width:480px){
+
+
+    .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .d-flex h2{
+
+        font-size:21px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+    .btn-primary{
+
+        width:100%;
+
+    }
+
+
+}

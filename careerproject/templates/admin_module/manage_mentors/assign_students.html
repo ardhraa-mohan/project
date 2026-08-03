@@ -1,0 +1,107 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+{%block css%}
+<link rel="stylesheet" href="{% static 'css/assign_students.css' %}">
+{%endblock%}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<div class="card shadow assign-card">
+
+<div class="card-header">
+
+<h4>Assign Students</h4>
+
+</div>
+
+<div class="card-body">
+
+<h5 class="mentor-name">
+
+Mentor :
+
+{{ mentor.user.username }}
+
+</h5>
+
+<hr>
+
+<form method="POST">
+
+{% csrf_token %}
+<div class="table-responsive">
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th></th>
+
+<!-- <th>Select</th> -->
+<th>Student</th>
+<th>Email</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for student in students %}
+
+<tr>
+
+<td>
+
+<input
+type="checkbox"
+name="students"
+value="{{ student.id }}"
+
+{% if student.id in assigned_students %}
+checked
+{% endif %}
+
+>
+
+</td>
+
+<td>
+
+{{ student.user.username }}
+
+</td>
+
+<td>
+
+{{ student.user.email }}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+</div>
+
+<button type="submit" class="btn save-btn">
+
+Save Assignment
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,288 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/resume_builder.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h2 class="resume-header">AI Resume Builder</h2>
+        <p class="text-muted">
+            Create a professional resume in minutes.
+        </p>
+    </div>
+
+    <div class="card shadow ">
+
+        <div class="card-body p-5">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <!-- Resume Name -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">
+                        Resume Name
+                    </label>
+
+                    <input type="text"
+                           name="resume_name"
+                           class="form-control"
+                           placeholder="Example: Python Developer Resume" required>
+                </div>
+
+                <!-- Select Job -->
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+                        Choose Job Role
+                    </label>
+
+                    <select class="form-select" name="job" id="jobSelect" required>
+
+                        <option value="">Choose a Job</option>
+
+                        {% for job in jobs %}
+
+                        <option
+                            value="{{ job.id }}"
+                            data-company="{{ job.company.company_name }}"
+                            data-location="{{ job.location }}"
+                            data-type="{{ job.job_type }}"
+                            data-skills="{{ job.skills_required }}"
+                            data-description="{{ job.description }}" >
+
+                            {{ job.job_title }} - {{ job.company.company_name }} ({{ job.location }})
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <!-- Company -->
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-semibold">
+                        Company
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="company"
+                           readonly required>
+
+                </div>
+
+                <!-- Location -->
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-semibold">
+                        Job Location
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="location"
+                           readonly>
+
+                </div>
+
+                <!-- Job Type -->
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-semibold">
+                        Job Type
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="jobtype"
+                           readonly required>
+
+                </div>
+
+                <!-- Skills Required -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+                        Skills Required
+                    </label>
+
+                    <textarea
+                        id="skills"
+                        rows="3"
+                        class="form-control"
+                        readonly></textarea>
+
+                </div>
+
+                <!-- Job Description -->
+
+                <div class="mb-4">
+
+                    <label class="form-label fw-semibold">
+                        Job Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="8"
+                        class="form-control"
+                        readonly></textarea>
+
+                </div>
+
+                <!-- Template -->
+
+               <!-- Resume Template -->
+
+<div class="mb-5">
+
+    <label class="form-label fw-semibold mb-3">
+        Choose Resume Template
+    </label>
+
+    <div class="row">
+
+        <!-- Professional -->
+
+        <div class="col-md-4 mb-3">
+
+            <label class="template-card w-100">
+
+                <input type="radio"
+       name="template"
+       value="professional"
+       id="professional"
+       class="template-radio"
+       checked>
+
+                <div class="card h-100 text-center p-3">
+
+                    <img src="{% static 'images/professional.png' %}"
+                         class="img-fluid rounded mb-3"
+                         alt="Professional">
+                 
+                    <h6>Professional</h6>
+
+                </div>
+
+            </label>
+
+        </div>
+
+        <!-- Modern -->
+
+        <div class="col-md-4 mb-3">
+
+            <label class="template-card w-100">
+
+                <input type="radio"
+       name="template"
+       value="modern"
+       id="modern"
+       class="template-radio"
+       >
+
+                <div class="card h-100 text-center p-3">
+
+                    <img src="{% static 'images/modern.jpeg' %}"
+                         class="img-fluid rounded mb-3"
+                         alt="Modern">
+         
+                    <h6>Modern</h6>
+
+                </div>
+
+            </label>
+
+        </div>
+
+        <!-- Minimal -->
+
+        <div class="col-md-4 mb-3">
+
+            <label class="template-card w-100">
+
+                <input type="radio"
+       name="template"
+       value="minimal"
+       id="minimal"
+       class="template-radio"
+       >
+
+                <div class="card h-100 text-center p-3">
+
+                    <img src="{% static 'images/minimal.jpeg' %}"
+                         class="img-fluid rounded mb-3"
+                         alt="Minimal">
+            
+                    <h6>Minimal</h6>
+
+                </div>
+
+            </label>
+
+        </div>
+
+    </div>
+
+</div>
+
+                <div class="text-center">
+                    <a href="">
+    <button class="btn btn-primary px-5">
+        Continue
+    </button>
+</a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const select = document.getElementById("jobSelect");
+
+select.addEventListener("change", function(){
+
+    let option = this.options[this.selectedIndex];
+
+    document.getElementById("company").value =
+    option.dataset.company || "";
+
+    document.getElementById("location").value =
+    option.dataset.location || "";
+
+    document.getElementById("jobtype").value =
+    option.dataset.type || "";
+
+    document.getElementById("skills").value =
+    option.dataset.skills || "";
+
+    document.getElementById("description").value =
+    option.dataset.description || "";
+
+});
+
+</script>
+
+{% endblock %}

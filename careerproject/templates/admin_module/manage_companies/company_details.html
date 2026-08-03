@@ -1,0 +1,141 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/student_detail.css' %}">
+
+{% block content %}
+
+<div class="container company-container">
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        <i class="bi bi-building"></i> Company Details
+    </h2>
+
+    <div class="row">
+
+        <!-- Company Information -->
+        <div class="col-md-6 mb-4">
+
+            <div class="card shadow">
+
+                <div class="card-header text-white" style="background-color: #667eea;">
+                    <h5 class="mb-0">Company Information</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <p><strong>Company Name :</strong> {{ company.company_name }}</p>
+
+                    <p><strong>Email :</strong> {{ company.user.email }}</p>
+
+                    <p><strong>Phone :</strong> {{ company.phone }}</p>
+
+                    <p><strong>Website :</strong>
+                        {% if company.website %}
+                            <a href="{{ company.website }}" target="_blank">
+                                {{ company.website }}
+                            </a>
+                        {% else %}
+                            Not Added
+                        {% endif %}
+                    </p>
+
+                    <p><strong>Address :</strong>
+                        {{ company.address|default:"Not Added" }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Account Information -->
+        <div class="col-md-6 mb-4">
+
+            <div class="card shadow">
+
+                <div class="card-header text-white" style="background-color: #667eea;">
+                    <h5 class="mb-0">Account Information</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <p><strong>Username :</strong> {{ company.user.username }}</p>
+
+                    <p><strong>Role :</strong> {{ company.user.role|title }}</p>
+
+                    <p><strong>Date Joined :</strong>
+                        {{ company.user.date_joined|date:"d M Y" }}
+                    </p>
+
+                    <p><strong>Total Jobs Posted :</strong>
+                        {{ total_jobs }}
+                    </p>
+
+                    <p><strong>Approved Jobs :</strong>
+                        <span class="badge bg-success">{{ approved_jobs }}</span>
+                    </p>
+
+                    <p><strong>Pending Jobs :</strong>
+                        <span class="badge bg-warning text-dark">{{ pending_jobs }}</span>
+                    </p>
+
+                    <p><strong>Rejected Jobs :</strong>
+                        <span class="badge bg-danger">{{ rejected_jobs }}</span>
+                    </p>
+
+                    <p>
+                        <strong>Status :</strong>
+
+                        {% if company.user.is_active %}
+                            <span class="badge bg-success">Active</span>
+                        {% else %}
+                            <span class="badge bg-danger">Inactive</span>
+                        {% endif %}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- About Company
+        <div class="col-md-12">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">About Company</h5>
+                </div>
+
+                <div class="card-body">
+
+                    {% if company.description %}
+                        {{ company.description }}
+                    {% else %}
+                        <p class="text-muted">No description available.</p>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div> -->
+
+    </div>
+
+    <div class="mt-4">
+
+        <a href="{% url 'manage_companies' %}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

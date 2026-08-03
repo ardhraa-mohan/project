@@ -1,0 +1,188 @@
+body {
+    background: #f8f9fc;
+}
+
+
+/* Main Cards */
+
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    transition: 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+
+
+/* Header */
+
+.card h3 {
+    color: #667eea;
+    font-weight: 700;
+}
+
+
+
+/* Completed Status */
+
+.text-success {
+    color: #16a34a !important;
+}
+
+
+
+/* Report Button */
+
+.btn-primary {
+
+    background: #667eea;
+    border-color: #667eea;
+    padding: 10px 25px;
+    font-weight: 600;
+
+}
+
+
+.btn-primary:hover {
+
+    background: #667eea;
+    border-color: #667eea;
+
+}
+
+
+
+/* Career Cards */
+
+.border.rounded-4 {
+
+    border: 1px solid #e5e7eb !important;
+    background: #fafafa;
+
+}
+
+
+.border.rounded-4:hover {
+
+    background: #f5f3ff;
+    border-color: 667eea !important;
+
+}
+
+
+
+/* Select Career Button */
+
+.btn-outline-primary {
+
+    color: #667eea;
+    border-color: #667eea;
+    font-weight: 600;
+
+}
+
+
+.btn-outline-primary:hover {
+
+    background: #667eea;
+    color: white;
+
+}
+
+
+
+/* Current Career */
+
+.current-career {
+
+    background: linear-gradient(
+        135deg,
+        #6c63ff,
+        #8b5cf6
+    );
+
+    color: white;
+
+}
+
+
+
+/* Change Button */
+
+.btn-outline-secondary {
+
+    font-weight: 600;
+
+}
+
+
+
+/* Retake Button */
+
+.btn-danger {
+
+    background: #ef4444;
+    border: none;
+    padding: 12px 35px;
+    font-weight: 600;
+
+}
+
+
+.btn-danger:hover {
+
+    background: #dc2626;
+
+}
+
+
+
+/* Text */
+
+.text-muted {
+
+    color: #6b7280 !important;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+
+    .card-body {
+
+        padding: 20px;
+
+    }
+
+
+    h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    h5 {
+
+        font-size:18px;
+
+    }
+
+
+    .btn {
+
+        width:100%;
+        margin-top:10px;
+
+    }
+
+
+}

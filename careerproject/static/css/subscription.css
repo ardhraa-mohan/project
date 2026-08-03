@@ -1,0 +1,184 @@
+body{
+    background:#f5f7fb;
+    font-family:Arial, sans-serif;
+}
+
+
+/* Heading */
+
+h2{
+    color:#667eea;
+    font-weight:700;
+}
+
+
+.text-muted{
+    color:#777;
+}
+
+
+
+/* Card */
+
+.plan-card{
+
+    background:white;
+    border-radius:15px;
+    border:2px solid #667eea;
+    transition:0.3s;
+    height: 100%;
+    
+
+}
+
+
+.plan-card:hover{
+
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+
+
+/* Plan Name */
+
+.plan-card h3{
+
+    color:#333;
+    font-size:25px;
+
+}
+
+
+
+/* Price */
+
+.price{
+
+    color:#667eea;
+    font-size:40px;
+    font-weight:bold;
+
+}
+
+
+.price small{
+
+    font-size:15px;
+    color:#777;
+
+}
+
+
+
+/* Features */
+
+.plan-card ul{
+
+    margin-top:20px;
+    padding:0;
+
+}
+
+
+.plan-card li{
+
+    list-style:none;
+    padding:8px;
+    color:#555;
+
+}
+
+
+
+/* Buttons */
+
+.btn{
+
+    border-radius:10px;
+    padding:12px;
+    font-weight:bold;
+
+}
+
+
+.btn-outline-primary{
+
+    border:2px solid #667eea;
+    color:#667eea;
+
+}
+
+
+.btn-outline-primary:hover{
+
+    background:#667eea;
+    color:white;
+
+}
+
+
+.btn-primary{
+
+    background:#667eea;
+    border:none;
+
+}
+
+
+.btn-primary:hover{
+
+    background:#5563c1;
+
+}
+
+
+
+/* Popular Plan */
+
+/* .popular{
+
+    border:2px solid #667eea;
+
+} */
+
+
+/* .popular-tag{
+
+    background:#667eea;
+    color:white;
+
+    display:inline-block;
+
+    padding:5px 15px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    position:absolute;
+
+    top:-15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+} */
+
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .plan-card{
+
+        margin-bottom:20px;
+
+    }
+
+}

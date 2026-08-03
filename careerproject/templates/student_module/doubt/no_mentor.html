@@ -1,0 +1,40 @@
+{% extends "common/base_private.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/no_mentor.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="no-mentor-card">
+
+        <img src="{% static 'images/no_mentor.jpg' %}"
+             class="no-mentor-icon"
+             alt="No Mentor">
+
+        <h2>No Mentor Assigned</h2>
+
+        <p>
+            You don't have a mentor assigned yet.
+        </p>
+
+        <p>
+            Once the administrator assigns a mentor, you'll be able to ask career,
+            coding, interview and project-related doubts through the chat.
+        </p>
+
+        <a href="{% url 'student_dashboard' %}"
+           class="btn btn-primary mt-3">
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

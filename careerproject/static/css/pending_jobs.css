@@ -1,0 +1,277 @@
+body{
+
+    background:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Container */
+
+.container{
+
+    padding-bottom:40px;
+
+}
+
+
+
+/* Heading */
+
+h3{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* Table Card Style */
+
+.table{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+}
+
+
+
+/* Table Header */
+
+.table-dark{
+
+    background:#667eea !important;
+
+}
+
+
+
+.table thead th{
+
+    background:#667eea !important;
+
+    color:white;
+
+    padding:15px;
+
+    text-align:center;
+
+    border:none;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Table Body */
+
+.table tbody td{
+
+    padding:15px;
+
+    text-align:center;
+
+    vertical-align:middle;
+
+    color:#444;
+
+}
+
+
+
+/* Row Hover */
+
+.table tbody tr{
+
+    transition:.3s ease;
+
+}
+
+
+
+.table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+
+
+/* Job Title */
+
+.table tbody td:nth-child(2){
+
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Buttons */
+
+.btn-primary{
+
+    background:#667eea !important;
+
+    border-color:#667eea !important;
+
+    border-radius:20px;
+
+    padding:6px 15px;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn-primary:hover{
+
+    background:#5566d8 !important;
+
+}
+
+
+
+.btn-success{
+
+    border-radius:20px;
+
+    padding:6px 15px;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn-danger{
+
+    border-radius:20px;
+
+    padding:6px 15px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Empty Message */
+
+.text-center{
+
+    color:#777;
+
+    font-weight:bold;
+
+    padding:30px !important;
+
+}
+
+
+
+/* ======================
+      Tablet
+====================== */
+
+@media(max-width:992px){
+
+
+    .table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* ======================
+      Mobile
+====================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    h3{
+
+        font-size:22px;
+
+        text-align:center;
+
+    }
+
+
+
+    .table{
+
+        min-width:850px;
+
+    }
+
+
+
+    .btn-primary,
+    .btn-success,
+    .btn-danger{
+
+        margin:3px;
+
+        font-size:12px;
+
+        padding:6px 12px;
+
+    }
+
+
+}
+
+
+
+/* ======================
+      Small Mobile
+====================== */
+
+@media(max-width:480px){
+
+
+    h3{
+
+        font-size:20px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+}

@@ -1,0 +1,408 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Container */
+
+.container{
+
+    padding-bottom:40px;
+
+}
+
+
+
+/* Main Card */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    overflow:hidden;
+
+}
+
+
+
+/* Header */
+
+.card-header.bg-primary{
+
+    background-color:#667eea !important;
+
+    padding:18px 25px;
+
+}
+
+
+.card-header h4,
+.card-header h5{
+
+    margin:0;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Body */
+
+.card-body{
+
+    padding:30px;
+
+}
+
+
+
+/* Section Titles */
+
+.card-body > h5{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+    margin-top:10px;
+
+}
+
+
+
+/* Student Details */
+
+p{
+
+    color:#444;
+
+    font-size:15px;
+
+}
+
+
+strong{
+
+    color:#333;
+
+}
+
+
+
+/* Divider */
+
+hr{
+
+    border-top:2px solid #eee;
+
+    margin:25px 0;
+
+}
+
+
+
+/* Inner Cards */
+
+.card .card{
+
+    border:1px solid #ddd;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* Career Assessment */
+
+.text-primary{
+
+    color:#667eea !important;
+
+    font-weight:bold;
+
+}
+
+
+.bg-light{
+
+    background:#f8f9ff !important;
+
+    border-left:5px solid #667eea;
+
+}
+
+
+
+pre{
+
+    color:#444;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+
+/* Alerts */
+
+.alert-warning{
+
+    border-radius:10px;
+
+    border-left:5px solid #ffc107;
+
+}
+
+
+
+/* Job Application Table */
+
+.table{
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+
+.table th{
+
+    background:#667eea;
+
+    color:white;
+
+    width:40%;
+
+}
+
+
+.table td,
+.table th{
+
+    padding:14px;
+
+    vertical-align:middle;
+
+}
+
+
+
+/* Feedback Section */
+
+.form-label{
+
+    font-weight:bold;
+
+    color:#444;
+
+}
+
+
+.form-control{
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+}
+
+
+.form-control:focus{
+
+    border-color:#667eea;
+
+    box-shadow:0 0 5px rgba(102,126,234,0.4);
+
+}
+
+
+
+/* Save Button */
+
+.btn-success{
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Back Button */
+
+.btn-outline-secondary{
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+}
+
+
+
+/* ==========================
+        Tablet
+========================== */
+
+@media(max-width:992px){
+
+
+    .card-body{
+
+        padding:25px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+        Mobile
+========================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+    .card{
+
+        border-radius:12px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px 15px;
+
+    }
+
+
+    .card-header{
+
+        padding:15px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:20px;
+
+    }
+
+
+    .card-header h5{
+
+        font-size:17px;
+
+    }
+
+
+    p{
+
+        font-size:14px;
+
+    }
+
+
+
+    /* Job Table */
+
+    .table{
+
+        font-size:13px;
+
+    }
+
+
+    .table th,
+    .table td{
+
+        padding:10px;
+
+    }
+
+
+
+    /* Buttons */
+
+    .btn-success,
+    .btn-outline-secondary{
+
+        width:100%;
+
+        margin:10px 0 !important;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+        Small Mobile
+========================== */
+
+@media(max-width:480px){
+
+
+    .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:18px;
+
+    }
+
+
+    pre{
+
+        font-size:13px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+}

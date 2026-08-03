@@ -1,0 +1,76 @@
+{% extends "company_module/recruitment/company_base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/view_application.css' %}">
+<div class="container mt-4">
+
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <h2>{{ application.student.full_name }}</h2>
+
+            <div class="info-box">
+                <strong>Email :</strong>
+                <span>{{ application.student.user.email }}</span>
+            </div>
+
+            <div class="info-box">
+                <strong>Qualification :</strong>
+                <span>{{ application.student.qualification }}</span>
+            </div>
+
+            <!-- <div class="info-box">
+                <strong>Skills :</strong>
+                <span>{{ application.student.skills }}</span>
+            </div> -->
+
+            <div class="resume-btn">
+                <a href="{% url 'company_resume_view' application.id %}"
+                   target="_blank"
+                   class="btn btn-info">
+                    View Resume
+                </a>
+            </div>
+
+            <hr>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <label>Application Status</label>
+
+                <select name="status" class="form-select">
+
+                    {% for value,label in application.STATUS_CHOICES %}
+
+                    <option value="{{ value }}"
+                        {% if application.status == value %}selected{% endif %}>
+                        {{ label }}
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+                <button class="btn btn-primary mt-3">
+                    Update Status
+                </button>
+
+            </form>
+            <br>
+            <a href="{% url 'view_applicants' application.job.id %}"
+           class="btn btn-outline-secondary ms-2 ">
+            ← Back
+        </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{%endblock%}

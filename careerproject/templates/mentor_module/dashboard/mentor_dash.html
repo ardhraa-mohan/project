@@ -1,0 +1,172 @@
+{% extends 'mentor_module/mentor_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mentordash.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="dashboard-header">
+
+        <h2>
+            Welcome, {{ mentor.full_name }} 👋
+        </h2>
+
+        <p>
+            Manage your assigned students, review resumes and provide interview feedback.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Assigned Students -->
+
+        <div class="col-lg-4">
+
+            <div class="stat-card">
+
+                <div>
+
+                    <h6>Assigned Students</h6>
+
+                    <h2>{{ student_count }}</h2>
+
+                </div>
+
+                <i class="bi bi-people-fill"></i>
+
+            </div>
+
+        </div>
+
+        <!-- Student Resumes -->
+
+        <div class="col-lg-4">
+
+            <div class="stat-card">
+
+                <div>
+
+                    <h6>Student Resumes</h6>
+
+                    <h2>{{ resume_count }}</h2>
+
+                </div>
+
+                <i class="bi bi-file-earmark-person-fill"></i>
+
+            </div>
+
+        </div>
+
+        <!-- Mock Interviews -->
+
+        <div class="col-lg-4">
+
+            <div class="stat-card">
+
+                <div>
+
+                    <h6>Mock Interviews</h6>
+
+                    <h2>{{ interview_count }}</h2>
+
+                </div>
+
+                <i class="bi bi-camera-video-fill"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-5">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header">
+
+                    <h5>Quick Actions</h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <a href="{% url 'my_students' %}" class="btn btn-primary mb-2 w-100">
+                        <i class="bi bi-people"></i>
+                        My Students
+                    </a>
+
+                    <!-- <a href="{% url 'mentor_feedback' %}" class="btn btn-success mb-2 w-100">
+                        <i class="bi bi-chat-left-text"></i>
+                        Resume Feedback
+                    </a> -->
+
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <div class="col-lg-6">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header">
+
+                    <h5>Profile</h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <p><strong>Name:</strong> {{ mentor.full_name }}</p>
+
+                    <p><strong>Email:</strong> {{ mentor.user.email }}</p>
+
+                    <p><strong>Qualification:</strong> {{ mentor.qualification }}</p>
+
+                    <p><strong>Experience:</strong> {{ mentor.experience }} Years</p>
+
+                </div>
+
+            </div>
+
+        </div> -->
+
+    </div>
+
+</div>
+
+{% if profile_incomplete %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    Swal.fire({
+        icon: "info",
+        title: "Complete Your Profile",
+        text: "Please complete your profile.",
+        confirmButtonText: "Complete Now",
+        allowOutsideClick: false
+
+    }).then(() => {
+
+        window.location.href = "{% url 'edit_mentor_profile' %}";
+
+    });
+
+});
+</script>
+
+{% endif %}
+{% endblock %}

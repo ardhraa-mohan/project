@@ -1,0 +1,242 @@
+/* ==========================================
+            MODERN RESUME TEMPLATE
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#eef2ff;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333;
+    line-height:1.7;
+}
+
+.resume{
+    width:210mm;
+    min-height:297mm;
+    background:#fff;
+    margin:30px auto;
+    padding:40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#4f46e5;
+    color:white;
+    text-align:center;
+    padding:30px;
+    border-radius:12px;
+}
+
+.header h1{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.header h3{
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.header p{
+    margin:6px 0;
+    font-size:15px;
+}
+
+.header a{
+    color:white;
+    text-decoration:none;
+}
+
+.header a:hover{
+    text-decoration:underline;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    margin-top:30px;
+}
+
+section h2{
+    color:#4f46e5;
+    border-left:5px solid #4f46e5;
+    padding-left:12px;
+    margin-bottom:18px;
+    font-size:20px;
+}
+
+/* ================= BLOCK ================= */
+
+.block{
+    margin-bottom:20px;
+}
+
+.block h3{
+    color:#222;
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.block span{
+    color:#666;
+    font-size:14px;
+}
+
+.block p{
+    margin-top:5px;
+    font-size:15px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+    text-align:justify;
+    line-height:1.8;
+}
+
+/* ================= SKILLS ================= */
+
+.sub-heading{
+    font-size:16px;
+    font-weight:bold;
+    margin-top:15px;
+    margin-bottom:8px;
+    color:#444;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+}
+
+.skills span{
+    background:#4f46e5;
+    color:white;
+    padding:7px 15px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ================= PROJECT LINKS ================= */
+
+.project-links{
+    margin-top:8px;
+}
+
+.project-links a{
+    display:inline-block;
+    margin-right:15px;
+    color:#4f46e5;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.project-links a:hover{
+    text-decoration:underline;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.company{
+    font-weight:bold;
+}
+
+.duration{
+    color:#666;
+    font-size:14px;
+}
+
+/* ================= LIST ================= */
+
+ul{
+    margin-left:20px;
+}
+
+ul li{
+    margin-bottom:6px;
+}
+
+/* ================= HORIZONTAL LINE ================= */
+
+hr{
+    border:none;
+    border-top:1px solid #ddd;
+    margin:25px 0;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+body{
+    background:white;
+}
+
+.resume{
+    margin:0;
+    width:100%;
+    padding:20px;
+    box-shadow:none;
+}
+
+.header{
+    border-radius:0;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.resume{
+    width:100%;
+    margin:0;
+    padding:20px;
+}
+
+.header{
+    padding:20px;
+}
+
+.header h1{
+    font-size:28px;
+}
+
+.header h3{
+    font-size:18px;
+}
+
+section h2{
+    font-size:18px;
+}
+
+.skills{
+    gap:8px;
+}
+
+.skills span{
+    font-size:13px;
+    padding:6px 12px;
+}
+
+}
+
+@media print{
+
+    .no-print{
+        display:none;
+    }
+
+}

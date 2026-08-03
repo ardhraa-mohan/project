@@ -1,0 +1,78 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/admin_job_details.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h4>{{ job.job_title }}</h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <p><strong>Company:</strong> {{ job.company.company_name }}</p>
+
+            <p><strong>Location:</strong> {{ job.location }}</p>
+
+            <p><strong>Job Type:</strong> {{ job.job_type }}</p>
+
+            <p><strong>Salary:</strong> {{ job.salary }}</p>
+
+            <p><strong>Status:</strong> {{ job.status }}</p>
+
+            <p><strong>Approval Status:</strong> {{ job.approval_status }}</p>
+
+            <p><strong>Deadline:</strong> {{ job.deadline }}</p>
+
+            <p><strong>Posted On:</strong> {{ job.posted_on }}</p>
+
+            <hr>
+
+            <h5>Description</h5>
+
+            <p>{{ job.description }}</p>
+
+            <h5>Skills Required</h5>
+
+            <p>{{ job.skills_required }}</p>
+
+            <hr>
+
+            <a href="{% url 'approve_job' job.id %}"
+               class="btn btn-success">
+
+                <i class="bi bi-check-circle"></i>
+                Approve
+
+            </a>
+
+            <a href="{% url 'reject_job' job.id %}"
+               class="btn btn-danger">
+
+                <i class="bi bi-x-circle"></i>
+                Reject
+
+            </a>
+
+            <a href="{% url 'pending_jobs' %}"
+               class="btn btn-secondary">
+
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

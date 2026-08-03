@@ -1,0 +1,150 @@
+body{
+    background:#f5f7fb;
+    font-family:Arial, sans-serif;
+}
+
+/* Heading */
+
+h2{
+    color:#667eea;
+    font-weight:700;
+}
+
+/* Card */
+
+.card{
+    border:2px solid #667eea;
+    border-radius:12px;
+}
+
+.card-body{
+    padding:25px;
+}
+
+/* Table */
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead{
+    background:#667eea;
+    color:white;
+}
+
+.table th{
+    padding:15px;
+    text-align:center;
+}
+
+.table td{
+    padding:15px;
+    vertical-align:middle;
+}
+
+/* Row Hover */
+
+.table tbody tr:hover{
+    background:#eef2ff;
+}
+
+/* Buttons */
+
+.btn{
+    width:80px;
+    border-radius:8px;
+    transition:.3s;
+    margin:2px;
+}
+
+
+
+.btn-primary:hover{
+    background:#5563c1;
+}
+
+/* View Button */
+
+.btn-info{
+    background:#0dcaf0;
+    color:white;
+    border:none;
+}
+
+.btn-info:hover{
+    background:#0aa2c0;
+    color:white;
+}
+
+/* Edit Button */
+
+.btn-warning{
+    color:white;
+}
+
+.btn-warning:hover{
+    color:white;
+}
+
+/* Delete Button */
+
+.btn-danger:hover{
+    background:#bb2d3b;
+}
+
+/* Empty Message */
+
+.table td{
+    font-size:15px;
+}
+
+/* Responsive */
+
+/* Tablet */
+
+@media (max-width:768px){
+
+    h2{
+        font-size:24px;
+    }
+
+    .card-body{
+        padding:20px;
+    }
+
+    .table th,
+    .table td{
+        padding:10px;
+        font-size:14px;
+    }
+
+    .btn{
+        font-size:13px;
+        padding:5px 10px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:576px){
+
+    h2{
+        font-size:20px;
+        text-align:center;
+    }
+
+    .card-body{
+        padding:15px;
+    }
+
+    .table{
+        font-size:13px;
+    }
+
+    .btn{
+        font-size:12px;
+        padding:5px 8px;
+    }
+
+}

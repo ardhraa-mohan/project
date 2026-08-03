@@ -1,0 +1,44 @@
+{% extends "common/base_private.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/roadmap.css' %}">
+
+<div class="roadmap-container">
+
+    <div class="roadmap-card">
+
+        <div class="roadmap-header">
+
+            <h2>🚀 Career Roadmap</h2>
+
+            <p>
+                Career Goal :
+                <strong>{{ career.career_name }}</strong>
+            </p>
+
+        </div>
+
+        <div class="roadmap-body">
+
+            <div class="ai-roadmap">
+
+                {{ roadmap.roadmap }}
+
+            </div>
+
+            <a href="{% url 'student_dashboard' %}" class="btn-back">
+
+                ← Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,354 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+/* Main Card */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    overflow:hidden;
+
+}
+
+
+
+/* Header */
+
+.card-header.bg-primary{
+
+    background-color:#f7f8fa !important;
+
+    padding:18px 25px;
+
+}
+
+
+.card-header h4{
+
+    margin:0;
+    color:#667eea;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Card Body */
+
+.card-body{
+
+    padding:30px;
+
+}
+
+
+
+/* Table */
+
+.table{
+
+    margin-bottom:0;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+
+
+.table thead th{
+
+    background-color:#667eea;
+
+    color:white;
+
+    padding:15px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    border:none;
+
+}
+
+
+
+.table tbody td{
+
+    padding:14px;
+
+    vertical-align:middle;
+
+    text-align:center;
+
+}
+
+
+
+/* Row Hover */
+
+.table tbody tr{
+
+    transition:0.3s ease;
+
+}
+
+
+.table tbody tr:hover{
+
+    background-color:#f8f9ff;
+
+}
+
+
+
+/* Status Badges */
+
+.badge{
+
+    padding:8px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+.bg-success{
+
+    background-color:#28a745 !important;
+
+}
+
+
+.bg-warning{
+
+    background-color:#ffc107 !important;
+
+}
+
+
+
+/* View Button */
+
+.btn-primary{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+    border-radius:20px;
+
+    padding:8px 18px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-primary:hover{
+
+    background-color:#5566d8;
+
+    border-color:#5566d8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Back Button */
+
+.btn-secondary{
+
+    border-radius:20px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Empty Message */
+
+.text-center{
+
+    color:#777;
+
+}
+
+
+
+/* ==========================
+        Tablet
+========================== */
+
+@media(max-width:992px){
+
+
+    .card-body{
+
+        padding:25px;
+
+    }
+
+
+    .table{
+
+        font-size:14px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+        Mobile
+========================== */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+    .card{
+
+        border-radius:12px;
+
+    }
+
+
+    .card-header{
+
+        padding:15px 20px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:20px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px 15px;
+
+    }
+
+
+
+    /* Responsive Table */
+
+    .table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+
+    .table th,
+    .table td{
+
+        padding:12px;
+
+    }
+
+
+    .btn-primary{
+
+        font-size:13px;
+
+        padding:7px 14px;
+
+    }
+
+
+}
+
+
+
+/* ==========================
+        Small Mobile
+========================== */
+
+@media(max-width:480px){
+
+
+    .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:18px;
+
+    }
+
+
+    .table{
+
+        font-size:12px;
+
+    }
+
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+
+        margin-top:10px;
+
+    }
+
+
+    .badge{
+
+        font-size:11px;
+
+        padding:6px 10px;
+
+    }
+
+
+}

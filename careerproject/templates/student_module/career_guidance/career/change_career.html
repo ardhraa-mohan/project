@@ -1,0 +1,94 @@
+{% extends "common/base_private.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/change_career.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+
+    <div class="card shadow-sm border-0 rounded-4">
+
+
+        <div class="card-body text-center p-5">
+
+
+            <h3 class="fw-bold mb-3">
+
+                🔄 Change Career?
+
+            </h3>
+
+
+
+            {% if current_career %}
+
+            <p class="fs-5">
+
+                Your current goal:
+
+            </p>
+
+
+            <h4 class="text-primary">
+
+                🐍 {{ current_career.career_name }}
+
+            </h4>
+
+
+            {% endif %}
+
+
+
+            <p class="text-muted mt-3">
+
+                You can select a new career after continuing.
+
+                Your current career selection will be removed.
+
+            </p>
+
+
+
+            <div class="mt-4">
+
+
+                <a href="{% url 'confirm_change_career' %}"
+                   class="btn btn-primary rounded-pill px-4">
+
+
+                    Continue
+
+
+                </a>
+
+
+
+                <a href="{% url 'career_assessment' %}"
+                   class="btn btn-outline-secondary rounded-pill px-4 ms-2">
+
+
+                    Cancel
+
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

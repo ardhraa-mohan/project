@@ -1,0 +1,112 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/manage_assign_students.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<div class="card shadow">
+
+<div class="card-header d-flex justify-content-between">
+
+<h4>Assign Students</h4>
+
+<form method="GET">
+
+<input
+type="text"
+name="search"
+placeholder="Search Mentor"
+class="form-control">
+
+</form>
+
+</div>
+
+<div class="card-body">
+
+<table class="table table-bordered">
+
+<thead>
+
+<tr>
+
+<th>SL.No</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Phone</th>
+
+<th>Students</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for mentor in mentors %}
+
+<tr>
+
+<td>{{ forloop.counter }}</td>
+
+<td>{{ mentor.user.username }}</td>
+
+<td>{{ mentor.user.email }}</td>
+
+<td>{{ mentor.phone }}</td>
+
+<td>
+
+{{ mentor.students.count }}
+
+</td>
+
+<td>
+
+<a
+href="{% url 'assign_students' mentor.id %}"
+class="btn btn-success btn-sm">
+
+Assign
+
+</a>
+
+</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="6">
+
+No mentors found.
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

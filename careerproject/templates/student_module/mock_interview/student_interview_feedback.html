@@ -1,0 +1,81 @@
+{% extends "common/base_private.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h3>Mentor Feedback</h3>
+
+{% for interview in interviews %}
+
+<div class="card shadow mb-3">
+
+    <div class="card-body">
+
+        <h5>
+
+            {{ interview.career.career_name }}
+
+        </h5>
+
+        <p>
+
+            <strong>Difficulty:</strong>
+
+            {{ interview.difficulty }}
+
+        </p>
+
+        <p>
+
+            <strong>Overall Score:</strong>
+
+            {{ interview.overall_score }}/100
+
+        </p>
+
+        <hr>
+
+        {% if interview.mentor_feedback %}
+
+            <h6>Mentor Feedback</h6>
+
+            <p>
+
+                {{ interview.mentor_feedback }}
+
+            </p>
+
+            <small class="text-muted">
+
+                {{ interview.feedback_date }}
+
+            </small>
+
+        {% else %}
+
+            <p class="text-muted">
+
+                No mentor feedback yet.
+
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<div class="alert alert-info">
+
+    No interviews found.
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

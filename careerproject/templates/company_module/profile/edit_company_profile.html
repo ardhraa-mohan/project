@@ -1,0 +1,85 @@
+{% extends 'company_module/recruitment/company_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/company_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card p-4 shadow">
+
+                <h2 class="text-center mb-4">
+                    Complete Company Profile
+                </h2>
+
+                <form method="POST" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label>Company Name</label>
+                        <input type="text" name="company_name" class="form-control"
+                               value="{{ pro.company_name }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Industry</label>
+                        <!-- <input type="text" name="industry" class="form-control"
+                               value="{{ pro.industry }}"> -->
+                         <select name="industry" class="form-control">
+
+                        <option value="">Select Industry</option>
+
+                        {% for value, label in industry_choices %}
+                            <option value="{{ value }}"
+                                {% if pro.industry == value %}selected{% endif %}>
+                                {{ label }}
+                            </option>
+        {% endfor %}
+
+    </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" class="form-control"
+                               value="{{ pro.phone }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Location</label>
+                        <input type="text" name="location" class="form-control"
+                               value="{{ pro.location }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Website</label>
+                        <input type="url" name="website" class="form-control"
+                               value="{{ pro.website }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>About Company</label>
+                        <textarea name="about" rows="5" class="form-control">{{ pro.about }}</textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Save Profile
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

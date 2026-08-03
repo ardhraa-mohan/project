@@ -1,0 +1,89 @@
+body{
+    background:#f5f7fb;
+    font-family:Arial, sans-serif;
+}
+
+/* Heading */
+
+h2,
+h3{
+    color:#667eea;
+    font-weight:700;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Labels */
+
+.form-label{
+    font-weight:600;
+    color:#333;
+}
+
+/* Inputs */
+
+.form-control{
+    border-radius:10px;
+    padding:10px;
+}
+
+.form-control:focus{
+    border-color:#667eea;
+    box-shadow:0 0 0 .2rem rgba(102,126,234,.25);
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:8px;
+    padding:8px 20px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#667eea;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#5563d6;
+}
+
+.btn-success{
+    background:#28a745;
+    border:none;
+}
+
+.btn-success:hover{
+    background:#218838;
+}
+
+.btn-warning{
+    color:#fff;
+}
+
+.btn-danger{
+    margin-left:5px;
+}
+
+/* Skills Card */
+
+.card-body p{
+    margin-bottom:10px;
+}
+
+strong{
+    color:#444;
+}
+
+/* Alert */
+
+.alert{
+    border-radius:10px;
+}

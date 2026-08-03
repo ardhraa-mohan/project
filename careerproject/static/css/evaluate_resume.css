@@ -1,0 +1,333 @@
+body{
+
+    background-color:#f4f4f4;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+/* Main Card */
+
+.card{
+
+    border:2px solid #667eea;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* Card Header */
+
+.card-header.bg-primary{
+
+    background-color:#667eea !important;
+
+    padding:18px 25px;
+
+}
+
+
+.card-header h4{
+
+    margin:0;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Card Body */
+
+.card-body{
+
+    padding:35px;
+
+}
+
+
+
+/* Student Details */
+
+.card-body h5{
+
+    color:#667eea;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+}
+
+
+.text-muted{
+
+    color:#777 !important;
+
+}
+
+
+
+/* Divider */
+
+hr{
+
+    border-top:2px solid #eee;
+
+    margin:25px 0;
+
+}
+
+
+
+/* Label */
+
+.form-label{
+
+    color:#333;
+
+}
+
+
+
+/* Text Area */
+
+.form-control{
+
+    border:1px solid #ccc;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    font-size:15px;
+
+    resize:none;
+
+    transition:0.3s ease;
+
+}
+
+
+.form-control:hover{
+
+    border-color:#667eea;
+
+}
+
+
+.form-control:focus{
+
+    border-color:#667eea;
+
+    box-shadow:0 0 8px rgba(102,126,234,0.4);
+
+}
+
+
+
+/* Save Button */
+
+.btn-success{
+
+    background-color:#667eea;
+
+    border-color:#667eea;
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-success:hover{
+
+    background-color:#5566d8;
+
+    border-color:#5566d8;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Back Button */
+
+.btn-secondary{
+
+    background:white;
+
+    color:#667eea;
+
+    border:2px solid #667eea;
+
+    border-radius:25px;
+
+    padding:10px 25px;
+
+    font-weight:bold;
+
+    transition:0.3s ease;
+
+}
+
+
+.btn-secondary:hover{
+
+    background:#667eea;
+
+    color:white;
+
+}
+
+
+
+/* =========================
+      Tablet Responsive
+========================= */
+
+@media(max-width:992px){
+
+
+    .card-body{
+
+        padding:25px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+      Mobile Responsive
+========================= */
+
+@media(max-width:768px){
+
+
+    .container{
+
+        padding:0 15px;
+
+    }
+
+
+    .card{
+
+        border-radius:12px;
+
+    }
+
+
+    .card-header{
+
+        padding:15px 20px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:20px;
+
+    }
+
+
+    .card-body{
+
+        padding:20px 15px;
+
+    }
+
+
+    .card-body h5{
+
+        font-size:19px;
+
+    }
+
+
+    .text-muted{
+
+        font-size:14px;
+
+    }
+
+
+    .form-control{
+
+        font-size:14px;
+
+        padding:12px;
+
+    }
+
+
+
+    /* Stack buttons */
+
+    .btn-success,
+    .btn-secondary{
+
+        width:100%;
+
+        margin:8px 0 !important;
+
+    }
+
+
+}
+
+
+
+/* =========================
+      Small Mobile
+========================= */
+
+@media(max-width:480px){
+
+
+    .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .card-header h4{
+
+        font-size:18px;
+
+    }
+
+
+    .card-body h5{
+
+        font-size:17px;
+
+    }
+
+
+    textarea{
+
+        height:180px;
+
+    }
+
+
+}

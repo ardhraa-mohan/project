@@ -1,0 +1,152 @@
+{% extends 'admin_module/administration/admin_base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/student_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h2 class="page-title">
+        <i class="bi bi-person-workspace"></i>
+        Mentor Profile
+    </h2>
+
+    <div class="row">
+
+        <!-- Personal Information -->
+        <div class="col-lg-6 mb-4">
+
+            <div class="card shadow info-card">
+
+                <div class="card-header">
+                    <i class="bi bi-person-fill"></i>
+                    Personal Information
+                </div>
+
+                <div class="card-body">
+
+                    <p><strong>Username :</strong> {{ mentor.user.username }}</p>
+
+                    <p><strong>Full Name :</strong> {{ mentor.full_name }}</p>
+
+                    <p><strong>Email :</strong> {{ mentor.user.email }}</p>
+
+                    <p><strong>Phone :</strong> {{ mentor.phone }}</p>
+
+                    <p><strong>Date Joined :</strong> {{ mentor.user.date_joined|date:"d M Y" }}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Professional Information -->
+        <div class="col-lg-6 mb-4">
+
+            <div class="card shadow info-card">
+
+                <div class="card-header">
+                    <i class="bi bi-briefcase-fill"></i>
+                    Professional Information
+                </div>
+
+                <div class="card-body">
+
+                    <p><strong>Qualification :</strong> {{ mentor.qualification }}</p>
+
+                    <p><strong>Experience :</strong> {{ mentor.experience }} Years</p>
+
+                    <p><strong>Specialization :</strong> {{ mentor.specialization }}</p>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- About -->
+        <div class="col-lg-6 mb-4">
+
+            <div class="card shadow info-card">
+
+                <div class="card-header">
+                    <i class="bi bi-file-person"></i>
+                    About Mentor
+                </div>
+
+                <div class="card-body">
+
+                    {% if mentor.bio %}
+                        <p>{{ mentor.bio }}</p>
+                    {% else %}
+                        <p>No bio available.</p>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Account Status -->
+        <div class="col-lg-6 mb-4">
+
+            <div class="card shadow info-card">
+
+                <div class="card-header">
+                    <i class="bi bi-shield-check"></i>
+                    Account Information
+                </div>
+
+                <div class="card-body">
+
+                    <p>
+                        <strong>Role :</strong>
+                        Mentor
+                    </p>
+
+                    <p>
+                        <strong>Account Status :</strong>
+
+                        {% if mentor.user.is_active %}
+                            <span class="badge bg-success">Active</span>
+                        {% else %}
+                            <span class="badge bg-danger">Inactive</span>
+                        {% endif %}
+                    </p>
+
+                    <p>
+                        <strong>Last Login :</strong>
+
+                        {% if mentor.user.last_login %}
+                            {{ mentor.user.last_login|date:"d M Y H:i" }}
+                        {% else %}
+                            Never Logged In
+                        {% endif %}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-3">
+
+        <a href="{% url 'manage_mentors' %}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i>
+            Back to Mentors
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

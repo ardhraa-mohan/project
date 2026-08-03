@@ -1,0 +1,79 @@
+{% extends 'common/base_private.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/interview_question.css' %}">
+
+<div class="container">
+
+    <div class="interview-card">
+
+        <div class="question-number">
+
+            Question {{ question.order }}
+
+        </div>
+
+        <h2 class="question-title">
+
+            AI Mock Interview
+
+        </h2>
+
+        <div class="progress">
+            <div class="progress-bar" style="width:50%;"></div>
+        </div>
+
+        <div class="question-box">
+
+            <h4>
+
+                {{ question.question }}
+
+            </h4>
+
+        </div>
+
+        <form method="post">
+    {% csrf_token %}
+
+    <textarea
+        name="answer"
+        class="form-control"
+        rows="8"
+        placeholder="Write your answer here..."
+        required>{{ question.answer }}</textarea>
+
+    <div class="button-area">
+
+        <button type="submit" class="next-btn">
+
+            {% if question.order == question.interview.total_questions %}
+                Finish Interview
+            {% else %}
+                Next →
+            {% endif %}
+
+        </button>
+
+    </div>
+
+</form>
+
+        <div class="tip-box">
+
+            <h6>💡 Interview Tip</h6>
+
+            <p>
+                Answer as if you are speaking to a real interviewer. Give clear,
+                complete responses and mention your projects or experiences where relevant.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
