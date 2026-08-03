@@ -1,4 +1,3 @@
-Career Assistant
 Career Assistant is an AI-powered web application developed using the Django framework to help students choose suitable career paths, improve their skills, prepare for interviews, build professional resumes, and apply for job. The system provides separate dashboards and functionalities for Students, Mentors, Companies, and Administrators.
 The application combines Artificial Intelligence with career guidance, career recommendation, career roadmaps, skill gap analysis, learning resources, mock interviews and resume generation
 Key Features
